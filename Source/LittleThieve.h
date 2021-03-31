@@ -2,7 +2,7 @@
 #define LITTLETHIEVE_H_INCLUDED
 
 #include <SDL.h>
-#include <iostream.h>
+#include <iostream>
 using namespace std;
 
 
