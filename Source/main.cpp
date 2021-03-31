@@ -44,7 +44,7 @@ void doKeyDown(SDL_Event event, int &x, int &y)
     }
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     SDL_Event event;
     SDL_Renderer *renderer;
