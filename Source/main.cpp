@@ -46,6 +46,9 @@ void doKeyDown(SDL_Event event, int &x, int &y)
 
 int main(int argc, char* argv[])
 {
+
+    vector <vector<int>> gamefield;
+
     SDL_Event event;
     SDL_Renderer *renderer;
     SDL_Window *window;
