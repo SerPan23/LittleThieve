@@ -4,7 +4,7 @@
 int main(int argc, char* argv[])
 {
 
-    vector <vector<int> > gamefield(1500, vector<int>(1000));
+    vector <vector<int> > gamefield(1400, vector<int>(900));
     int x = 1382, y = 525;
     Player player;
     player.x = x;

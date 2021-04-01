@@ -54,3 +54,6 @@ obj/
 Project/LittleThieve/bin/Debug/LittleThieve.exe
 Project/LittleThieve/LittleThieve.depend
 Project/LittleThieve/obj/Debug/Source/main.o
+*.exe
+Project/LittleThieve/LittleThieve.depend
+Project/LittleThieve/obj/Debug/Source/main.o
