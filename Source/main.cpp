@@ -64,12 +64,11 @@ int main(int argc, char* argv[])
 
             if(event.type == SDL_KEYDOWN)
                 doKeyDown(event, x, y);
-
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-            SDL_RenderClear(renderer);
-            filled_rect(renderer, x, y, 100, 100);
-            SDL_RenderPresent(renderer);
         }
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+        SDL_RenderClear(renderer);
+        filled_rect(renderer, x, y, 100, 100);
+        SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
