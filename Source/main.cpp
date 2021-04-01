@@ -10,7 +10,6 @@ int main(int argc, char* argv[])
     player.x = x;
     player.y = y;
 
-
     SDL_Event event;
     SDL_Renderer *renderer;
     SDL_Window *window;
@@ -18,6 +17,7 @@ int main(int argc, char* argv[])
     SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(1500, 1000, 0, &window, &renderer);
 
+    Build_lvl_1(renderer);
     bool quit = false;
     while (!quit) {
         while(SDL_PollEvent(&event)){
