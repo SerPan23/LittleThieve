@@ -1,9 +1,14 @@
 #include "LittleThieve.h"
+#include "Player.h"
 
 int main(int argc, char* argv[])
 {
 
     vector <vector<int> > gamefield(1500, vector<int>(1000));
+    int x = 1382, y = 525;
+    Player player;
+    player.x = x;
+    player.y = y;
 
 
     SDL_Event event;
@@ -13,9 +18,6 @@ int main(int argc, char* argv[])
     SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(1500, 1000, 0, &window, &renderer);
 
-
-    int x = 1382, y = 525;
-
     bool quit = false;
     while (!quit) {
         while(SDL_PollEvent(&event)){
@@ -23,11 +25,12 @@ int main(int argc, char* argv[])
                 quit = true;
 
             if(event.type == SDL_KEYDOWN)
-                doKeyDown(event, x, y);
+                player.movePlayer(event);
         }
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         SDL_RenderClear(renderer);
-        filled_rect(renderer, x, y, 100, 100);
+        //filled_rect(renderer, x, y, 100, 100);
+        player.drawPlayer(renderer);
         SDL_RenderPresent(renderer);
     }
     SDL_DestroyRenderer(renderer);

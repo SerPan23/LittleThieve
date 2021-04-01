@@ -1,6 +1,7 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
 
+#include "LittleThieve.h"
 
 class Player{
     public:
@@ -8,7 +9,6 @@ class Player{
         int y;
         int width = 48;
         int height = 48;
-        int y;
         int speed = 3;
 
         void movePlayer(SDL_Event event)
@@ -32,6 +32,11 @@ class Player{
             {
                 x += speed;
             }
+        }
+
+        void drawPlayer(SDL_Renderer *renderer)
+        {
+            filled_rect(renderer, x, y, 100, 100);
         }
 };
 
