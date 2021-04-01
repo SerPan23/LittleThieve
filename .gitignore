@@ -51,3 +51,6 @@ bin/
 obj/
 
 # End of https://www.toptal.com/developers/gitignore/api/codeblocks,c++
+Project/LittleThieve/bin/Debug/LittleThieve.exe
+Project/LittleThieve/LittleThieve.depend
+Project/LittleThieve/obj/Debug/Source/main.o

@@ -47,17 +47,18 @@ void doKeyDown(SDL_Event event, int &x, int &y)
 int main(int argc, char* argv[])
 {
 
-    vector <vector<int>> gamefield;
+    vector <vector<int> > gamefield(1500, vector<int>(1000));
+
 
     SDL_Event event;
     SDL_Renderer *renderer;
     SDL_Window *window;
 
     SDL_Init(SDL_INIT_VIDEO);
-    SDL_CreateWindowAndRenderer(800, 600, 0, &window, &renderer);
+    SDL_CreateWindowAndRenderer(1500, 1000, 0, &window, &renderer);
 
 
-    int x = 10, y = 10;
+    int x = 1382, y = 525;
 
     bool quit = false;
     while (!quit) {
