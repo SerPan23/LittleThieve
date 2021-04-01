@@ -1,17 +1,11 @@
 # depslib dependency file v1.0
-1617197391 source:e:\projects\c++_codes\littlethieve\source\main.cpp
+1617303423 source:e:\projects\c++_codes\littlethieve\source\build_lvl_1.cpp
+	"Wall.h"
+
+1617303889 e:\projects\c++_codes\littlethieve\source\wall.h
 	"LittleThieve.h"
 
-1617302561 e:\projects\c++_codes\littlethieve\source\littlethieve.h
-	<SDL.h>
-	<iostream>
-	<vector>
-
-1617302854 source:c:\users\andrew\desktop\littlethieve\source\main.cpp
-	"LittleThieve.h"
-	"Player.h"
-
-1617303529 c:\users\andrew\desktop\littlethieve\source\littlethieve.h
+1617303533 e:\projects\c++_codes\littlethieve\source\littlethieve.h
 	<SDL.h>
 	<iostream>
 	<vector>
@@ -19,12 +13,10 @@
 1617302015 source:e:\projects\c++_codes\littlethieve\source\drawfuncs.cpp
 	"LittleThieve.h"
 
-1617302854 c:\users\andrew\desktop\littlethieve\source\player.h
+1617303871 source:e:\projects\c++_codes\littlethieve\source\main.cpp
 	"LittleThieve.h"
+	"Player.h"
 
-1617303330 source:c:\users\andrew\desktop\littlethieve\source\build_lvl_1.cpp
-	"Wall.h"
-
-1617303424 c:\users\andrew\desktop\littlethieve\source\wall.h
+1617302531 e:\projects\c++_codes\littlethieve\source\player.h
 	"LittleThieve.h"
 
