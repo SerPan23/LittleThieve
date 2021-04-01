@@ -5,8 +5,14 @@
 #include <iostream>
 #include <vector>
 
+#include "Player.h"
+
 using namespace std;
 
+//draw funcs
+void line_vertical(SDL_Renderer *renderer, int x, int y, int y2);
+void line_horizontal(SDL_Renderer *renderer, int x, int y, int x2);
+void filled_rect(SDL_Renderer *renderer, int x, int y, int width, int height);
 
 
 #endif // LITTLETHIEVE_H_INCLUDED

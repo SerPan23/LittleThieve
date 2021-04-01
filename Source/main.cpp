@@ -1,49 +1,5 @@
 #include "LittleThieve.h"
 
-void line_vertical(SDL_Renderer *renderer, int x, int y, int y2)
-{
-    SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
-    for (int i = y; i <= y2; ++i)
-        SDL_RenderDrawPoint(renderer, x, i);
-}
-
-void line_horizontal(SDL_Renderer *renderer, int x, int y, int x2)
-{
-    SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
-    for (int i = x; i <= x2; ++i)
-        SDL_RenderDrawPoint(renderer, i, y);
-}
-
-void filled_rect(SDL_Renderer *renderer, int x, int y, int width, int height)
-{
-    for(int i = 0; i <= height; i++)
-    line_horizontal(renderer, x, y+i, x+width);
-}
-
-void doKeyDown(SDL_Event event, int &x, int &y)
-{
-    int speed = 3;
-    if (event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)
-    {
-        y -= speed;
-    }
-
-    if (event.key.keysym.scancode == SDL_SCANCODE_DOWN || event.key.keysym.scancode == SDL_SCANCODE_S)
-    {
-        y += speed;
-    }
-
-    if (event.key.keysym.scancode == SDL_SCANCODE_LEFT || event.key.keysym.scancode == SDL_SCANCODE_A)
-    {
-        x -= speed;
-    }
-
-    if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT || event.key.keysym.scancode == SDL_SCANCODE_D)
-    {
-        x += speed;
-    }
-}
-
 int main(int argc, char* argv[])
 {
 
