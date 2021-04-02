@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="../../Source/Build_lvl_1.cpp" />
+		<Unit filename="../../Source/Globals.h" />
+		<Unit filename="../../Source/Item.h" />
 		<Unit filename="../../Source/LittleThieve.h" />
 		<Unit filename="../../Source/Player.h" />
 		<Unit filename="../../Source/Wall.h" />
