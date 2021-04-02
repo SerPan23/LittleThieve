@@ -36,7 +36,7 @@ class Player{
 
         void drawPlayer(SDL_Renderer *renderer)
         {
-            filled_rect(renderer, x, y, 100, 100);
+            filled_rect(renderer, x, y, width, height);
         }
 };
 
