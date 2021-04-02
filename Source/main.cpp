@@ -4,7 +4,7 @@
 int main(int argc, char* argv[])
 {
 
-    vector <vector<int> > gamefield(1400, vector<int>(900));
+    //vector <vector<int> > gamefield(1400, vector<int>(900));
     int x = 1382, y = 525;
     Player player;
     player.x = x;
@@ -36,5 +36,6 @@ int main(int argc, char* argv[])
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+
     return 0;
 }
