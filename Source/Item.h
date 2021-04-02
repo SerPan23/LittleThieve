@@ -21,6 +21,7 @@ public:
 
 
 class Candy:public Item{
+public:
     void event() override {
         cout << "Candy";
     }
