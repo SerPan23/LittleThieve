@@ -23,6 +23,17 @@ public:
 
 class Candy:public Item{
 public:
+
+    Candy(int x, int y, int w, int h, int r, int g, int b)
+    {
+        this->x = x;
+        this->y = x;
+        this->width = w;
+        this->height = h;
+        this->r = r;
+        this->g = g;
+        this->b = b;
+    }
     void event() override {
         cout << "Candy";
     }
