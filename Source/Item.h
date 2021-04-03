@@ -15,7 +15,7 @@ public:
     virtual void event() = 0;
 
     void draw(SDL_Renderer *renderer){
-         filled_rect(renderer,  x,  y, width, height, r, g, b);
+         filled_rect(renderer,  this->x,  this->y, this->width, this->height, this->r, this->g, this->b);
     }
 
 };

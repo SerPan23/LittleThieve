@@ -1,7 +1,7 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
-#include <vector>
+#include "LittleThieve.h"
 #include "Wall.h"
 #include "Item.h"
 
