@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "Globals.h"
+#include "Game.h"
 
 using namespace std;
 
