@@ -8,12 +8,11 @@ class Wall
         short id;
         int x, y;
         int w, h;
+        int depth;
         int r, g, b;
         void    drawWall(SDL_Renderer *renderer)
         {
-            SDL_SetRenderDrawColor(renderer, r, g, b, 255);
-            line_vertical(renderer, x, y, y+h);
-            line_horizontal(renderer, x, y, x+w);
+            filled_rect(renderer, x, y, w, h, r, g, b);
         }
 };
 

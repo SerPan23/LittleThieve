@@ -11,9 +11,9 @@
 using namespace std;
 
 //draw funcs
-void    line_vertical(SDL_Renderer *renderer, int x, int y, int y2);
-void    line_horizontal(SDL_Renderer *renderer, int x, int y, int x2);
-void    filled_rect(SDL_Renderer *renderer, int x, int y, int width, int height);
+void    line_vertical(SDL_Renderer *renderer, int x, int y, int y2, int r, int g, int b);
+void    line_horizontal(SDL_Renderer *renderer, int x, int y, int x2, int r, int g, int b);
+void    filled_rect(SDL_Renderer *renderer, int x, int y, int width, int height, int r, int g, int b);
 void    Build_lvl_1(SDL_Renderer *renderer);
 
 

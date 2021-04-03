@@ -9,13 +9,13 @@ public:
     int y;
     int width;
     int height;
+    int r, g, b;
 
 
     virtual void event() = 0;
 
     void draw(SDL_Renderer *renderer){
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        filled_rect(renderer, x, y, width, height);
+         filled_rect(renderer,  x,  y, width, height, r, g, b);
     }
 
 };
