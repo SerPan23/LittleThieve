@@ -27,7 +27,7 @@ public:
     Candy(int x, int y, int w, int h, int r, int g, int b)
     {
         this->x = x;
-        this->y = x;
+        this->y = y;
         this->width = w;
         this->height = h;
         this->r = r;
