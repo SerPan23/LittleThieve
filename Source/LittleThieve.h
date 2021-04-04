@@ -5,8 +5,6 @@
 #include <iostream>
 #include <vector>
 
-#include "Globals.h"
-
 using namespace std;
 
 //draw funcs

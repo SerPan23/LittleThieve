@@ -1,6 +1,11 @@
 #ifndef GLOBALS_H_INCLUDED
 #define GLOBALS_H_INCLUDED
 
+namespace globals {
+	const int SCREEN_WIDTH = 1500;
+	const int SCREEN_HEIGHT = 1000;
+}
+
 struct Vector2 {
 	int x, y;
 	Vector2() :
