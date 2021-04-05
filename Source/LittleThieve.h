@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 
+#include "it_math.h"
+
 using namespace std;
 
 //draw funcs

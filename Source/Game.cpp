@@ -44,7 +44,7 @@ void Game::gameLoop() {
         const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
 
-		this->update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
+		this->update(it_min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
 
 		this->_graphics = graphics;
