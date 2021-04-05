@@ -8,7 +8,7 @@ struct ObjectData{
     vector <vector<SDL_Color> > texture;
     int height;
     int width;
-    int x, y;
+    float x, y;
 };
 
 

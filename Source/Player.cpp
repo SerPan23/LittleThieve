@@ -3,7 +3,7 @@
 void Player::drawPlayer(SDL_Renderer *renderer)
 {
     //filled_rect(renderer, x, y, width, height, 0, 255, 0);
-    drawTexture(this->texture, renderer, (int)this->x, (int)this->y);
+    drawTexture(this->objData.texture, renderer, (int)this->objData.x, (int)this->objData.y);
 }
 
 void Player::moveLeft() {
@@ -54,11 +54,11 @@ void Player::movePlayer(SDL_Event event)
 
 void Player::update(float elapsedTime)
 {
-    int t = this->x;
+    int t = this->objData.x;
     //cout << this->_dx << " " << elapsedTime << " | " << this->_dx * elapsedTime << endl;
-    this->x += this->_dx * elapsedTime;
+    this->objData.x += this->_dx * elapsedTime;
     //cout << this->x-t << endl;
-    this->y += this->_dy * elapsedTime;
+    this->objData.y += this->_dy * elapsedTime;
     this-> _dx = 0.0f;
     this-> _dy = 0.0f;
 

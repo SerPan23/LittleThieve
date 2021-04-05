@@ -29,7 +29,7 @@ void Game::gameLoop() {
     Graphics graphics(true);
 
     this->_player = Player(1334, 495, 48, 48);
-    _player.texture = loadTexture("..\\..\\Source\\Sprites\\image.bmp");
+    _player.objData.texture = loadTexture("..\\..\\Source\\Sprites\\image.bmp");
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
