@@ -27,7 +27,7 @@ void Game::gameLoop() {
 
     Graphics graphics(true);
 
-    this->_player = Player(1334, 495, 48, 48, 3);
+    this->_player = Player(1334, 495, 48, 48);
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
