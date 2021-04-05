@@ -10,6 +10,7 @@ class Player{
         int width = 48;
         int height = 48;
         float speed = 0.2f;
+        vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
         Player(int x, int y, int width, int height)
         {
             this->x = x;

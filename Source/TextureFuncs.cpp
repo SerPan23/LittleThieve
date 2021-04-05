@@ -30,9 +30,9 @@ Uint32 getpixel(SDL_Surface *surface, int x, int y)
 }
 
 
-vector <vector<SDL_Color> > loadTexture(char* path[])
+vector <vector<SDL_Color> > loadTexture(char* path)
 {
-    SDL_Surface *image = SDL_LoadBMP("..\\..\\Source\\Sprites\\image.bmp");
+    SDL_Surface *image = SDL_LoadBMP(path);//"..\\..\\Source\\Sprites\\image.bmp"
     vector <vector<SDL_Color> > texture(image->h, vector<SDL_Color>(image->w));
 
     for(int i = 0; i < image->h; i++)
