@@ -48,7 +48,7 @@ vector <vector<SDL_Color> > loadTexture(char* path)
     return texture;
 }
 
-void drawTexture(vector <vector<SDL_Color> > texture, SDL_Renderer *renderer)
+void drawTexture(vector <vector<SDL_Color> > texture, SDL_Renderer *renderer, int x, int y)
 {
     for(int i = 0; i < texture.size(); i++)
         {
@@ -56,7 +56,7 @@ void drawTexture(vector <vector<SDL_Color> > texture, SDL_Renderer *renderer)
             {
                 SDL_Color pixelColor = texture[i][j];
                 SDL_SetRenderDrawColor(renderer, (int)pixelColor.r, (int)pixelColor.g, (int)pixelColor.b, 255);
-                SDL_RenderDrawPoint(renderer, i, j);
+                SDL_RenderDrawPoint(renderer, i+x, j+y);
             }
         }
 }

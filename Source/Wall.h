@@ -1,6 +1,7 @@
 #ifndef WALL_H_INCLUDED
 #define WALL_H_INCLUDED
 #include "LittleThieve.h"
+#include "TextureFuncs.h"
 
 class Wall
 {
@@ -11,6 +12,7 @@ class Wall
         int depth;
         int r, g, b;
         bool type = false;
+        vector <vector<SDL_Color> > texture;
 
         Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b, bool type)
         {
@@ -42,13 +44,17 @@ class Wall
             if(type)
             {
                 for(int i = 0; i < w / depth; i++){
-                    filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
-                    filled_rect(renderer, i*depth + x, h, depth, depth, r, g, b);
+                    //filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
+                    //filled_rect(renderer, i*depth + x, h, depth, depth, r, g, b);
+                    drawTexture(this->texture, renderer, i*depth + x, y);
+                    drawTexture(this->texture, renderer, i*depth + x, h);
                 }
                 for(int i = 0; i < h / depth; i++)
                 {
-                    filled_rect(renderer, x, i*depth + y, depth, depth, r, g, b);
-                    filled_rect(renderer, w, i*depth + y, depth, depth, r, g, b);
+                    //filled_rect(renderer, x, i*depth + y, depth, depth, r, g, b);
+                    //filled_rect(renderer, w, i*depth + y, depth, depth, r, g, b);
+                    drawTexture(this->texture, renderer, x, i*depth + y);
+                    drawTexture(this->texture, renderer, w, i*depth + y);
                 }
             }
             else

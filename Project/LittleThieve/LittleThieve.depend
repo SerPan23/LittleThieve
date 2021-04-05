@@ -20,3 +20,68 @@
 1617302531 e:\projects\c++_codes\littlethieve\source\player.h
 	"LittleThieve.h"
 
+1617619502 source:c:\users\uchenik\documents\github\littlethieve\source\build_lvl_1.cpp
+	"Wall.h"
+	"Item.h"
+	"Game.h"
+
+1617619655 c:\users\uchenik\documents\github\littlethieve\source\wall.h
+	"LittleThieve.h"
+	"TextureFuncs.h"
+
+1617614112 c:\users\uchenik\documents\github\littlethieve\source\littlethieve.h
+	<SDL.h>
+	<iostream>
+	<vector>
+	"it_math.h"
+
+1617614112 c:\users\uchenik\documents\github\littlethieve\source\it_math.h
+
+1617614112 c:\users\uchenik\documents\github\littlethieve\source\item.h
+	"LittleThieve.h"
+
+1617614112 c:\users\uchenik\documents\github\littlethieve\source\game.h
+	"LittleThieve.h"
+	"Player.h"
+	"Graphics.h"
+
+1617619169 c:\users\uchenik\documents\github\littlethieve\source\player.h
+	"LittleThieve.h"
+	"TextureFuncs.h"
+
+1617614112 c:\users\uchenik\documents\github\littlethieve\source\graphics.h
+	"LittleThieve.h"
+
+1617614112 source:c:\users\uchenik\documents\github\littlethieve\source\drawfuncs.cpp
+	"LittleThieve.h"
+
+1617614112 source:c:\users\uchenik\documents\github\littlethieve\source\graphics.cpp
+	"Graphics.h"
+	"Globals.h"
+
+1617614112 c:\users\uchenik\documents\github\littlethieve\source\globals.h
+
+1617614112 source:c:\users\uchenik\documents\github\littlethieve\source\main.cpp
+	"Game.h"
+	"TextureFuncs.h"
+
+1617619139 c:\users\uchenik\documents\github\littlethieve\source\texturefuncs.h
+	"LittleThieve.h"
+
+1617619408 source:c:\users\uchenik\documents\github\littlethieve\source\texturefuncs.cpp
+	"TextureFuncs.h"
+
+1617619287 source:c:\users\uchenik\documents\github\littlethieve\source\game.cpp
+	"Game.h"
+	"Player.h"
+	"Globals.h"
+	"Item.h"
+	"Wall.h"
+	"TextureFuncs.h"
+
+1617614256 source:c:\users\uchenik\documents\github\littlethieve\source\it_math.cpp
+	"it_math.h"
+
+1617619379 source:c:\users\uchenik\documents\github\littlethieve\source\player.cpp
+	"Player.h"
+

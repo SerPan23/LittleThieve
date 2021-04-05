@@ -3,9 +3,10 @@
 #include "Globals.h"
 #include "Item.h"
 #include "Wall.h"
+#include "TextureFuncs.h"
 
 namespace {
-	const int FPS = 60;
+	const int FPS = 100;
 	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 
@@ -28,6 +29,7 @@ void Game::gameLoop() {
     Graphics graphics(true);
 
     this->_player = Player(1334, 495, 48, 48);
+    _player.texture = loadTexture("..\\..\\Source\\Sprites\\image.bmp");
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
@@ -44,10 +46,9 @@ void Game::gameLoop() {
         const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
 
+		this->_graphics = graphics;
 		this->update(it_min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
-
-		this->_graphics = graphics;
 		this->draw(graphics);
     }
 
@@ -62,5 +63,5 @@ void Game::draw(Graphics &graphics) {
 }
 
 void Game::update(float elapsedTime) {
-    //this->_player.update(elapsedTime);
+    this->_player.update(elapsedTime);
 }
