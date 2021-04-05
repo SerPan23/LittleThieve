@@ -6,11 +6,13 @@
 class Wall
 {
     public:
-        short id;
-        int x, y;
-        int w, h;
+        //short id;
+        //int x, y;
+        //int w, h;
         int depth;
-        vector <vector<SDL_Color> > texture;
+        //vector <vector<SDL_Color> > texture;
+
+        ObjectData objData;
 
         /*Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b, bool type)
         {
@@ -27,11 +29,11 @@ class Wall
         }*/
         Wall(short id, int x, int y, int w, int h, int depth)
         {
-            this->id = id;
-            this->x = x;
-            this->y = y;
-            this->w = w;
-            this->h = h;
+            this->objData.id = id;
+            this->objData.x = x;
+            this->objData.y = y;
+            this->objData.width = w;
+            this->objData.height = h;
             this->depth = depth;
         }
         void    drawWall(SDL_Renderer *renderer)
