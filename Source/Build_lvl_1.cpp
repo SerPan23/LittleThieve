@@ -15,14 +15,14 @@ void    Build_lvl_1(SDL_Renderer *renderer)
     Wall main_wallAngle3(1, 50, 914, 48, 48, 48);
     Wall main_wallAngle4(1, 1394, 914, 48, 48, 48);
 
-    main_wall_1.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
-    main_wall_2.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(138).bmp");
-    main_wall_3.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
-    main_wall_4.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(138).bmp");
-    main_wallAngle1.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(109).bmp");
-    main_wallAngle2.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(110).bmp");
-    main_wallAngle3.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(136).bmp");
-    main_wallAngle4.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(137).bmp");
+    main_wall_1.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
+    main_wall_2.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(138).bmp");
+    main_wall_3.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
+    main_wall_4.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wall(138).bmp");
+    main_wallAngle1.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(109).bmp");
+    main_wallAngle2.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(110).bmp");
+    main_wallAngle3.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(136).bmp");
+    main_wallAngle4.objData.texture = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(137).bmp");
 
     main_wall_1.drawWall(renderer);
     main_wall_2.drawWall(renderer);
