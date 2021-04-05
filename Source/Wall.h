@@ -10,11 +10,9 @@ class Wall
         int x, y;
         int w, h;
         int depth;
-        int r, g, b;
-        bool type = false;
         vector <vector<SDL_Color> > texture;
 
-        Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b, bool type)
+        /*Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b, bool type)
         {
             this->id = id;
             this->x = x;
@@ -26,8 +24,8 @@ class Wall
             this->g = g;
             this->b = b;
             this->type = type;
-        }
-        Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b)
+        }*/
+        Wall(short id, int x, int y, int w, int h, int depth)
         {
             this->id = id;
             this->x = x;
@@ -35,13 +33,10 @@ class Wall
             this->w = w;
             this->h = h;
             this->depth = depth;
-            this->r = r;
-            this->g = g;
-            this->b = b;
         }
         void    drawWall(SDL_Renderer *renderer)
         {
-            if(type)
+            /*if(type)
             {
                 for(int i = 0; i < w / depth; i++){
                     //filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
@@ -56,16 +51,15 @@ class Wall
                     drawTexture(this->texture, renderer, x, i*depth + y);
                     drawTexture(this->texture, renderer, w, i*depth + y);
                 }
-            }
-            else
-            {
+            }*/
                 if(depth == w)
                     for(int i = 0; i < h / depth; i++)
-                        filled_rect(renderer, x, i*depth + y, depth, depth, r, g, b);
+                        //filled_rect(renderer, x, i*depth + y, depth, depth, r, g, b);
+                        drawTexture(this->texture, renderer, x, i*depth + y);
                 else
                     for(int i = 0; i < w / depth; i++)
-                        filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
-            }
+                        //filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
+                        drawTexture(this->texture, renderer, i*depth + x, y);
         }
 };
 
