@@ -2,18 +2,18 @@
 #define WALL_H_INCLUDED
 #include "LittleThieve.h"
 #include "TextureFuncs.h"
-#include "ObjectData.h"
+#include "SpriteData.h"
 
 class Wall
 {
     public:
-        //short id;
-        //int x, y;
+        short id;
+        int x, y;
         //int w, h;
         int depth;
         //vector <vector<SDL_Color> > texture;
 
-        ObjectData objData;
+        SpriteData spriteData;
 
         /*Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b, bool type)
         {
@@ -30,11 +30,11 @@ class Wall
         }*/
         Wall(short id, int x, int y, int w, int h, int depth)
         {
-            this->objData.id = id;
-            this->objData.x = x;
-            this->objData.y = y;
-            this->objData.width = w;
-            this->objData.height = h;
+            this->id = id;
+            this->x = x;
+            this->y = y;
+            this->spriteData.width = w;
+            this->spriteData.height = h;
             this->depth = depth;
         }
         void    drawWall(SDL_Renderer *renderer)
@@ -55,14 +55,14 @@ class Wall
                     drawTexture(this->texture, renderer, w, i*depth + y);
                 }
             }*/
-                if(depth == objData.width)
-                    for(int i = 0; i < objData.height / depth; i++)
+                if(depth == spriteData.width)
+                    for(int i = 0; i < spriteData.height / depth; i++)
                         //filled_rect(renderer, x, i*depth + y, depth, depth, r, g, b);
-                        drawTexture(this->objData.texture, renderer, objData.x, i*depth + objData.y);
+                        drawTexture(this->spriteData.texture, renderer, this->x, i*depth + this->y);
                 else
-                    for(int i = 0; i < objData.width / depth; i++)
+                    for(int i = 0; i < spriteData.width / depth; i++)
                         //filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
-                        drawTexture(this->objData.texture, renderer, i*depth + objData.x, objData.y);
+                        drawTexture(this->spriteData.texture, renderer, i*depth + this->x, this->y);
         }
 };
 

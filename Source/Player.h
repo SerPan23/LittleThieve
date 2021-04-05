@@ -3,23 +3,23 @@
 
 #include "LittleThieve.h"
 #include "TextureFuncs.h"
-#include "ObjectData.h"
+#include "SpriteData.h"
 
 class Player{
     public:
-        //float x;
-        //float y;
+        float x;
+        float y;
         //int width = 48;
         //int height = 48;
         float speed = 0.4f;
         //vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
-        ObjectData objData;
+        SpriteData spriteData;
         Player(int x, int y, int width, int height)
         {
-            this->objData.x = x;
-            this->objData.y = y;
-            this->objData.width = width;
-            this->objData.height = height;
+            this->x = x;
+            this->y = y;
+            this->spriteData.width = width;
+            this->spriteData.height = height;
         }
         Player(){}
 
