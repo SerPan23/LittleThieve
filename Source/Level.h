@@ -20,7 +20,7 @@ public:
 
 private:
     void loadMap(int LevelIndex, Graphics &graphics);
-    int _mapIndex;
+    int _LevelIndex;
     Vector2 _size;
 };
 
