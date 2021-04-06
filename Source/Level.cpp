@@ -9,9 +9,7 @@ Level::Level(int LevelIndex, Graphics &graphics) :
 	this->loadMap(LevelIndex, graphics);
 }
 
-Level::~Level() {
-
-}
+Level::~Level() {}
 
 Level::loadMap(int LevelIndex, Graphics &graphics)
 {
