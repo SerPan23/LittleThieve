@@ -9,7 +9,7 @@ class Wall
     public:
         short id;
         int x, y;
-        //int w, h;
+        int w, h;
         int depth;
         //vector <vector<SDL_Color> > texture;
 
@@ -33,8 +33,8 @@ class Wall
             this->id = id;
             this->x = x;
             this->y = y;
-            this->spriteData.width = w;
-            this->spriteData.height = h;
+            this->w = w;
+            this->h = h;
             this->depth = depth;
         }
         void    drawWall(SDL_Renderer *renderer)
@@ -55,12 +55,12 @@ class Wall
                     drawTexture(this->texture, renderer, w, i*depth + y);
                 }
             }*/
-                if(depth == spriteData.width)
-                    for(int i = 0; i < spriteData.height / depth; i++)
+                if(depth == w)
+                    for(int i = 0; i < h / depth; i++)
                         //filled_rect(renderer, x, i*depth + y, depth, depth, r, g, b);
                         drawTexture(this->spriteData.texture, renderer, this->x, i*depth + this->y);
                 else
-                    for(int i = 0; i < spriteData.width / depth; i++)
+                    for(int i = 0; i < w / depth; i++)
                         //filled_rect(renderer, i*depth + x, y, depth, depth, r, g, b);
                         drawTexture(this->spriteData.texture, renderer, i*depth + this->x, this->y);
         }
