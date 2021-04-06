@@ -2,7 +2,7 @@
 #include "Item.h"
 #include "Game.h"
 
-void    Build_lvl_1(SDL_Renderer *renderer)
+void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls;)
 {
     Candy candy(625, 225, 24, 24, 255, 0, 255);
     candy.draw(renderer);

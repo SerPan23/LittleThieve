@@ -14,6 +14,8 @@ public:
 	Level(int LevelIndex, Graphics &graphics);
 	~Level();
 
+	vector <Wall> walls;
+
 	void update(int elapsedTime, Player &player);
 	void draw(Graphics &graphics);
 
