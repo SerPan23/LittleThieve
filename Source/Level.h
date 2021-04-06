@@ -7,6 +7,7 @@
 #include "Wall.h"
 #include "Item.h"
 #include "Globals.h"
+#include "LevelBulders.h"
 
 class Level{
 public:

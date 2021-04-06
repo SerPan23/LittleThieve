@@ -27,6 +27,7 @@ void Game::gameLoop() {
     SDL_Event event;
 
     Graphics graphics(true);
+    this->_level = Level(1, graphics);
 
     this->_player = Player(1334, 495, 48, 48);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\image.bmp");
@@ -57,7 +58,8 @@ void Game::gameLoop() {
 
 void Game::draw(Graphics &graphics) {
     graphics.clear();
-    Build_lvl_1(graphics.getRenderer());
+    //Build_lvl_1(graphics.getRenderer());
+    _level.draw(graphics);
     _player.drawPlayer(graphics.getRenderer());
     graphics.flip();
 }

@@ -4,6 +4,7 @@
 #include "LittleThieve.h"
 #include "Player.h"
 #include "Graphics.h"
+#include "Level.h"
 
 class Game{
 public:
@@ -16,6 +17,7 @@ private:
 	void update(float elapsedTime);
 
 	Player _player;
+	Level _level;
 	Graphics _graphics;
 };
 
