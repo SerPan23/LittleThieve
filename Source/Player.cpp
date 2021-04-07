@@ -27,10 +27,7 @@ void Player::moveStop(){
     this-> _dy = 0.0f;
 }
 
-/*bool Player::checkCollosion(vector <Wall> &walls){
 
-}
-*/
 void Player::movePlayer(SDL_Event event)
 {
         if (event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)
