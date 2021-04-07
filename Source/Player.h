@@ -12,6 +12,7 @@ class Player{
         //int width = 48;
         //int height = 48;
         float speed = 0.4f;
+        float _dx = 0.0f, _dy = 0.0f;
         //vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
         SpriteData spriteData;
         Player(int x, int y, int width, int height)
@@ -33,8 +34,8 @@ class Player{
 
         void update(float elapsedTime);
         void drawPlayer(SDL_Renderer *renderer);
-    private:
-        float _dx = 0.0f, _dy = 0.0f;
+    //private:
+
 };
 
 
