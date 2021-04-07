@@ -4,7 +4,7 @@
 #include "LittleThieve.h"
 #include "TextureFuncs.h"
 #include "SpriteData.h"
-#include "Level.h"
+//#include "Level.h"
 
 class Player{
     public:
@@ -31,7 +31,7 @@ class Player{
         void moveTop();
         void moveDown();
         void moveStop();
-        bool checkCollosion(vector <Wall> &walls);
+        //bool checkCollosion(vector <Wall> &walls);
 
         void update(float elapsedTime);
         void drawPlayer(SDL_Renderer *renderer);
