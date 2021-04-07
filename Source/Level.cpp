@@ -47,12 +47,12 @@ void Level::checkCollision(int elapsedTime, Player &player)
         else
         {
             if(player.x > walls[i].w)
-                if(player.x + player._dx * elapsedTime <= walls[i].w + walls[i].spriteData.width+1) // вверхн€€
+                if(player.x + player._dx * elapsedTime <= walls[i].w + walls[i].spriteData.width+1) // лева€
                 {
                     player._dx = 0;
                 }
             else if(player.x + player.spriteData.width < walls[i].x)
-                if(player.x + player.spriteData.width + player._dx * elapsedTime >= walls[i].x)// нижн€€
+                if(player.x + player.spriteData.width + player._dx * elapsedTime >= walls[i].x)// права€
                 {
                     player._dx = 0;
                 }
