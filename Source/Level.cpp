@@ -31,8 +31,8 @@ void Level::draw(Graphics &graphics)
 void Level::checkCollision(int elapsedTime, Player &player)
 {
     for(int i = 0; i < walls.size(); i++){
-        if(walls[i].w > walls[i].h) // горизонтальные
-        {
+        //if(walls[i].w > walls[i].h) // горизонтальные
+        //{
             if(player.x >= walls[i].x && player.x <= walls[i].w+walls[i].x)
             {
                 if(player.y > walls[i].h)
@@ -46,9 +46,9 @@ void Level::checkCollision(int elapsedTime, Player &player)
                         player._dy = 0;
                     }
             }
-        }
-        else
-        {
+        //}
+        //else
+        //{
             if(player.y >= walls[i].y && player.y <= walls[i].h+walls[i].y)
             {
                 if(player.x > walls[i].w)
@@ -62,7 +62,7 @@ void Level::checkCollision(int elapsedTime, Player &player)
                         player._dx = 0;
                     }
             }
-        }
+        //}
     }
 
 }
