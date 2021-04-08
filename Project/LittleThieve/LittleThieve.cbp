@@ -31,6 +31,27 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../Source/Build_lvl_1.cpp" />
+		<Unit filename="../../Source/Game.cpp" />
+		<Unit filename="../../Source/Game.h" />
+		<Unit filename="../../Source/Globals.h" />
+		<Unit filename="../../Source/Graphics.cpp" />
+		<Unit filename="../../Source/Graphics.h" />
+		<Unit filename="../../Source/Item.h" />
+		<Unit filename="../../Source/Level.cpp" />
+		<Unit filename="../../Source/Level.h" />
+		<Unit filename="../../Source/LevelBulders.h" />
+		<Unit filename="../../Source/LittleThieve.h" />
+		<Unit filename="../../Source/Player.cpp" />
+		<Unit filename="../../Source/Player.h" />
+		<Unit filename="../../Source/SpriteData.h" />
+		<Unit filename="../../Source/TextureFuncs.cpp" />
+		<Unit filename="../../Source/TextureFuncs.h" />
+		<Unit filename="../../Source/Wall.h" />
+		<Unit filename="../../Source/drawFuncs.cpp" />
+		<Unit filename="../../Source/it_math.cpp" />
+		<Unit filename="../../Source/it_math.h" />
+		<Unit filename="../../Source/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
