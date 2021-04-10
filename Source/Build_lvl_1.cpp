@@ -34,10 +34,10 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
     main_wallAngle3.drawWall(renderer);
     main_wallAngle4.drawWall(renderer);
 
-    Wall wall_1(1, 767, 100, 32, 300, 32);
-    Wall wall_2(1, 479, 356, 300, 32, 32);
+    Wall wall_1(1, 767, 100, 32, 288, 32);
+    Wall wall_2(1, 479, 356, 288, 32, 32);
     Wall wall_3(1, 100, 356, 150, 32, 32);
-    Wall wall_4(1, 767, 625, 32, 300, 32);
+    Wall wall_4(1, 767, 625, 32, 288, 32);
     walls.push_back(main_wall_1);
     walls.push_back(main_wall_2);
     walls.push_back(main_wall_3);
@@ -46,6 +46,10 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
     walls.push_back(main_wallAngle2);
     walls.push_back(main_wallAngle3);
     walls.push_back(main_wallAngle4);
+    wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(138)32x32.bmp");
+    wall_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(111)32x32.bmp");
+    walls.push_back(wall_1);
+    walls.push_back(wall_2);
     /*wall_1.drawWall(renderer);
     wall_2.drawWall(renderer);
     wall_3.drawWall(renderer);
