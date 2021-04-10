@@ -30,39 +30,34 @@ void Level::draw(Graphics &graphics)
 
 void Level::checkCollision(int elapsedTime, Player &player)
 {
-    for(int i = 0; i < walls.size(); i++){
-        //if(walls[i].w > walls[i].h) // горизонтальные
-        //{
-            if(player.x >= walls[i].x && player.x <= walls[i].w+walls[i].x)
+    for(int i = 0; i < walls.size(); i++)
+    {
+        if(player.x >= walls[i].x && player.x <= walls[i].w+walls[i].x)
+        {
+            if((player.y >= walls[i].h+ walls[i].y)&&(player.y + player._dy * elapsedTime <= walls[i].h + walls[i].y))// вверхн€€
             {
-                if(player.y > walls[i].h)
-                    if(player.y + player._dy * elapsedTime <= walls[i].h + walls[i].spriteData.height-1) // вверхн€€
-                    {
-                        player._dy = 0;
-                    }
-                else if(player.y + player.spriteData.height < walls[i].y)
-                    if(player.y + player.spriteData.height + player._dy * elapsedTime >= walls[i].y)// нижн€€
-                    {
-                        player._dy = 0;
-                    }
+                player._dy = 0;
+                player.y = walls[i].h + walls[i].y;
             }
-        //}
-        //else
-        //{
-            if(player.y >= walls[i].y && player.y <= walls[i].h+walls[i].y)
+            else if((player.y + player.spriteData.height <= walls[i].y)&&(player.y + player.spriteData.height + player._dy * elapsedTime >= walls[i].y))// нижн€€
             {
-                if(player.x > walls[i].w)
-                    if(player.x + player._dx * elapsedTime <= walls[i].w + walls[i].spriteData.width+1) // лева€
-                    {
-                        player._dx = 0;
-                    }
-                else if(player.x + player.spriteData.width < walls[i].x)
-                    if(player.x + player.spriteData.width + player._dx * elapsedTime >= walls[i].x)// права€
-                    {
-                        player._dx = 0;
-                    }
+                player._dy = 0;
+                player.y = walls[i].y - player.spriteData.height;
             }
-        //}
+        }
+        if(player.y >= walls[i].y && player.y <= walls[i].h+walls[i].y)
+        {
+            if((player.x >= walls[i].w + walls[i].x)&&(player.x + player._dx * elapsedTime <= walls[i].w+walls[i].x))//Ћева€
+            {
+                player._dx = 0;
+                player.x = walls[i].w + walls[i].x;
+            }
+            else if((player.x + player.spriteData.width <= walls[i].x)&&(player.x + player.spriteData.width + player._dx * elapsedTime >= walls[i].x)) //ѕрава€
+            {
+                player._dx = 0;
+                player.x = walls[i].x - player.spriteData.width;
+            }
+        }
     }
 
 }

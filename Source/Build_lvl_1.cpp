@@ -25,14 +25,14 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
     main_wallAngle3.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(136).bmp");
     main_wallAngle4.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(137).bmp");
 
-    /*main_wall_1.drawWall(renderer);
+    main_wall_1.drawWall(renderer);
     main_wall_2.drawWall(renderer);
     main_wall_3.drawWall(renderer);
     main_wall_4.drawWall(renderer);
     main_wallAngle1.drawWall(renderer);
     main_wallAngle2.drawWall(renderer);
     main_wallAngle3.drawWall(renderer);
-    main_wallAngle4.drawWall(renderer);*/
+    main_wallAngle4.drawWall(renderer);
 
     Wall wall_1(1, 767, 100, 32, 300, 32);
     Wall wall_2(1, 479, 356, 300, 32, 32);
@@ -46,10 +46,6 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
     walls.push_back(main_wallAngle2);
     walls.push_back(main_wallAngle3);
     walls.push_back(main_wallAngle4);
-    wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
-    wall_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
-    walls.push_back(wall_1);
-    walls.push_back(wall_2);
     /*wall_1.drawWall(renderer);
     wall_2.drawWall(renderer);
     wall_3.drawWall(renderer);
