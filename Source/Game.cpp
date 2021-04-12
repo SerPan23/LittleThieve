@@ -6,7 +6,7 @@
 #include "TextureFuncs.h"
 
 namespace {
-	const int FPS = 100;
+	const int FPS = 50;
 	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 
