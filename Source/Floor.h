@@ -13,7 +13,7 @@ class Floor
     SpriteData spriteData;
 
     Floor(){}
-    Floor(int x, int x1, int y, int y1)
+    Floor(int x, int y, int x1, int y1)
     {
         this->x = x;
         this->y = y;

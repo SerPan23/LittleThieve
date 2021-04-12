@@ -15,19 +15,6 @@ class Wall
 
         SpriteData spriteData;
 
-        /*Wall(short id, int x, int y, int w, int h, int depth, int r, int g, int b, bool type)
-        {
-            this->id = id;
-            this->x = x;
-            this->y = y;
-            this->w = w;
-            this->h = h;
-            this->depth = depth;
-            this->r = r;
-            this->g = g;
-            this->b = b;
-            this->type = type;
-        }*/
         Wall(short id, int x, int y, int w, int h, int depth)
         {
             this->id = id;
