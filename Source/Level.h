@@ -4,7 +4,6 @@
 #include "LittleThieve.h"
 #include "Graphics.h"
 #include "Player.h"
-#include "Wall.h"
 #include "Item.h"
 #include "Globals.h"
 #include "LevelBulders.h"
@@ -16,6 +15,7 @@ public:
 	~Level();
 
 	vector <Wall> walls;
+	Floor floor;
 
 	void update(int elapsedTime, Player &player);
 	void draw(Graphics &graphics);

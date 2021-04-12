@@ -1,12 +1,12 @@
-#include "Wall.h"
 #include "Item.h"
 #include "Game.h"
 #include "LevelBulders.h"
 
-void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
+void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, Floor &floor)
 {
     Candy candy(625, 225, 24, 24, 255, 0, 255);
     candy.draw(renderer);
+    Floor floor1(50, 50, 1394, 914);
     Wall main_wall_1(1, 98, 50, 1298, 48, 48); // 1, 50, 50, 1394, 48, 48
     Wall main_wall_2(1, 50, 98, 48, 818, 48); // 1, 50, 50, 48, 914, 48
     Wall main_wall_3(1, 98, 914, 1298, 48, 48); // 1, 50, 914, 1394, 48, 48
@@ -16,6 +16,7 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
     Wall main_wallAngle3(1, 50, 914, 48, 48, 48);
     Wall main_wallAngle4(1, 1394, 914, 48, 48, 48);
 
+    floor1.spriteData = loadTexture("..\\..\\Source\\Sprites\\floor(96).bmp");
     main_wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
     main_wall_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(138).bmp");
     main_wall_3.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
@@ -24,15 +25,7 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls)
     main_wallAngle2.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(110).bmp");
     main_wallAngle3.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(136).bmp");
     main_wallAngle4.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(137).bmp");
-
-    main_wall_1.drawWall(renderer);
-    main_wall_2.drawWall(renderer);
-    main_wall_3.drawWall(renderer);
-    main_wall_4.drawWall(renderer);
-    main_wallAngle1.drawWall(renderer);
-    main_wallAngle2.drawWall(renderer);
-    main_wallAngle3.drawWall(renderer);
-    main_wallAngle4.drawWall(renderer);
+    floor = floor1;
 
     Wall wall_1(1, 767, 100, 32, 288, 32);
     Wall wall_2(1, 479, 356, 288, 32, 32);

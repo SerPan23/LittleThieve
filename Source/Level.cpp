@@ -14,7 +14,7 @@ Level::~Level() {}
 void Level::loadMap(int LevelIndex, Graphics &graphics)
 {
     if(LevelIndex == 1)
-        Build_lvl_1(graphics.getRenderer(), walls);
+        Build_lvl_1(graphics.getRenderer(), walls, floor);
 }
 
 void Level::update(int elapsedTime, Player &player)
@@ -24,6 +24,7 @@ void Level::update(int elapsedTime, Player &player)
 
 void Level::draw(Graphics &graphics)
 {
+    floor.drawFloor(graphics.getRenderer());
     for(int i = 0; i < walls.size(); i++)
         walls[i].drawWall(graphics.getRenderer());
 }
