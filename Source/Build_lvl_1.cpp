@@ -2,10 +2,8 @@
 #include "Game.h"
 #include "LevelBulders.h"
 
-void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, Floor &floor)
+void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, vector <Item *> &items, Floor &floor)
 {
-    Candy candy(625, 225, 24, 24, 255, 0, 255);
-    candy.draw(renderer);
     Floor floor1(50, 50, 1394, 914);
     Wall main_wall_1(1, 98, 50, 1298, 48, 48); // 1, 50, 50, 1394, 48, 48
     Wall main_wall_2(1, 50, 98, 48, 818, 48); // 1, 50, 50, 48, 914, 48

@@ -2,20 +2,31 @@
 #define ITEM_H_INCLUDED
 
 #include "LittleThieve.h"
+#include "SpriteData.h"
+#include "TextureFuncs.h"
 
 class Item{
 public:
     int x;
     int y;
-    int width;
-    int height;
-    int r, g, b;
+    int w;
+    int h;
+    //int r, g, b;
+    SpriteData spriteData;
+    Item(){}
+    Item(int x, int y, int w, int h)
+    {
+        this->x = x;
+        this->y = y;
+        this->w = w;
+        this->h = h;
+    }
 
 
     virtual void event() = 0;
 
     void draw(SDL_Renderer *renderer){
-         filled_rect(renderer,  this->x,  this->y, this->width, this->height, this->r, this->g, this->b);
+         drawTexture(this->spriteData.texture, renderer, (int)this->x, (int)this->y);
     }
 
 };
@@ -24,15 +35,12 @@ public:
 class Candy:public Item{
 public:
 
-    Candy(int x, int y, int w, int h, int r, int g, int b)
+    Candy(int x, int y, int w, int h)
     {
         this->x = x;
         this->y = y;
-        this->width = w;
-        this->height = h;
-        this->r = r;
-        this->g = g;
-        this->b = b;
+        this->w = w;
+        this->h = h;
     }
     void event() override {
         cout << "Candy";
