@@ -33,7 +33,7 @@ void Level::checkCollision(int elapsedTime, Player &player)
 {
     for(int i = 0; i < walls.size(); i++)
     {
-        if((player.x >= walls[i].x && player.x <= walls[i].w+walls[i].x)||(player.x+player.spriteData.width >= walls[i].x && player.x+player.spriteData.width <= walls[i].w+walls[i].x))
+        if((player.x >= walls[i].x && player.x <= walls[i].w+walls[i].x)||(player.x+player.spriteData.width >= walls[i].x && player.x+player.spriteData.width <= walls[i].w+walls[i].x)||(player.x+player.spriteData.width/2 >= walls[i].x && player.x+player.spriteData.width/2 <= walls[i].w+walls[i].x))
         {
             if(((player.y >= walls[i].h + walls[i].y)||(player.y+player.spriteData.width >= walls[i].h + walls[i].y)||(player.y+player.spriteData.width/2 >= walls[i].h + walls[i].y))&&(player.y + player._dy * elapsedTime <= walls[i].h + walls[i].y))// вверхняя
             {
@@ -46,7 +46,7 @@ void Level::checkCollision(int elapsedTime, Player &player)
                 //player.y = walls[i].y - player.spriteData.height;
             }
         }
-        if((player.y >= walls[i].y && player.y <= walls[i].h+walls[i].y)||(player.y+player.spriteData.height >= walls[i].y && player.y+player.spriteData.height <= walls[i].h+walls[i].y))
+        if((player.y >= walls[i].y && player.y <= walls[i].h+walls[i].y)||(player.y+player.spriteData.height >= walls[i].y && player.y+player.spriteData.height <= walls[i].h+walls[i].y)||(player.y+player.spriteData.height/2 >= walls[i].y && player.y+player.spriteData.height/2 <= walls[i].h+walls[i].y))
         {
             if(((player.x >= walls[i].w + walls[i].x)||(player.x+player.spriteData.height >= walls[i].w + walls[i].x)||(player.x+player.spriteData.height/2 >= walls[i].w + walls[i].x))&&(player.x + player._dx * elapsedTime <= walls[i].w+walls[i].x))//Левая
             {
