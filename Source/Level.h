@@ -16,6 +16,7 @@ public:
 
 	vector <Wall> walls;
 	Floor floor;
+    vector <Item *> items;
 
 	void update(int elapsedTime, Player &player);
 	void draw(Graphics &graphics);

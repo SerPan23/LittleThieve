@@ -21,9 +21,6 @@ Game::~Game() {
 
 void Game::gameLoop() {
 
-    vector <Wall> walls;
-    vector <Item *> items;
-
     SDL_Event event;
 
     Graphics graphics(true);
