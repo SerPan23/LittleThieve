@@ -59,7 +59,7 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, vector <Item> 
     walls.push_back(wall_4_end);
 
     Item test(500, 500, 32, 32, 0);
-    test.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_4_end(150).bmp");
+    test.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
     items.push_back(test);
 
     /*wall_1.drawWall(renderer);

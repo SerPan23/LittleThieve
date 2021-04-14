@@ -1,5 +1,7 @@
 #include "TextureFuncs.h"
 
+#include <SDL_image.h>
+
 Uint32 getpixel(SDL_Surface *surface, int x, int y)
 {
     int bpp = surface->format->BytesPerPixel;
@@ -49,7 +51,8 @@ Uint32 getpixel(SDL_Surface *surface, int x, int y)
 }*/
 SpriteData loadTexture(char* path)
 {
-    SDL_Surface *image = SDL_LoadBMP(path);//"..\\..\\Source\\Sprites\\image.bmp"
+    //SDL_Surface *image = SDL_LoadBMP(path);//"..\\..\\Source\\Sprites\\image.bmp"
+    SDL_Surface *image = IMG_Load(path);
     vector <vector<SDL_Color> > texture(image->h, vector<SDL_Color>(image->w));
 
     for(int i = 0; i < image->h; i++)

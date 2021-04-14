@@ -27,7 +27,7 @@ void Game::gameLoop() {
     this->_level = Level(1, graphics);
 
     this->_player = Player(1334, 495, 48, 48);
-    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\image.bmp");
+    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
