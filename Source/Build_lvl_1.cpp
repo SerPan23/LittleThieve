@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "LevelBulders.h"
 
-void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, vector <Item *> &items, Floor &floor)
+void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, vector <Item> &items, Floor &floor)
 {
     Floor floor1(50, 50, 1394, 914);
     Wall main_wall_1(1, 98, 50, 1298, 48, 48); // 1, 50, 50, 1394, 48, 48
@@ -57,6 +57,11 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, vector <Item *
     walls.push_back(wall_3_end);
     walls.push_back(wall_4);
     walls.push_back(wall_4_end);
+
+    Item test(500, 500, 32, 32, 0);
+    test.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_4_end(150).bmp");
+    items.push_back(test);
+
     /*wall_1.drawWall(renderer);
     wall_2.drawWall(renderer);
     wall_3.drawWall(renderer);

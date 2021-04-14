@@ -5,25 +5,34 @@
 #include "SpriteData.h"
 #include "TextureFuncs.h"
 
+/*Types:
+0 - Candy
+*/
+
 class Item{
 public:
     int x;
     int y;
     int w;
     int h;
+    int type;
     //int r, g, b;
     SpriteData spriteData;
     Item(){}
-    Item(int x, int y, int w, int h)
+    Item(int x, int y, int w, int h, int type)
     {
         this->x = x;
         this->y = y;
         this->w = w;
         this->h = h;
+        this->type = type;
     }
 
 
-    virtual void event() = 0;
+    void event()
+    {
+
+    }
 
     void draw(SDL_Renderer *renderer){
          drawTexture(this->spriteData.texture, renderer, (int)this->x, (int)this->y);
@@ -31,7 +40,7 @@ public:
 
 };
 
-
+/*
 class Candy:public Item{
 public:
 
@@ -45,7 +54,7 @@ public:
     void event() override {
         cout << "Candy";
     }
-};
+};*/
 
 
 #endif // ITEM_H_INCLUDED

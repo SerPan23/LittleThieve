@@ -28,10 +28,7 @@ void Level::draw(Graphics &graphics)
     for(int i = 0; i < walls.size(); i++)
         walls[i].drawWall(graphics.getRenderer());
     for(int i = 0; i < items.size(); i++)
-    {
-        Item *p = items[i];
-        p->draw(graphics.getRenderer());
-    }
+        items[i].draw(graphics.getRenderer());
 }
 
 void Level::checkCollision(int elapsedTime, Player &player)
@@ -68,31 +65,30 @@ void Level::checkCollision(int elapsedTime, Player &player)
 
     for(int i = 0; i < items.size(); i++)
     {
-        Item *itemi = items[i];
-        if((player.x >= itemi->x && player.x <= itemi->w+itemi->x)||(player.x+player.spriteData.width >= itemi->x && player.x+player.spriteData.width <= itemi->w+itemi->x)||(player.x+player.spriteData.width/2 >= itemi->x && player.x+player.spriteData.width/2 <= itemi->w+itemi->x))
+        if((player.x >= items[i].x && player.x <= items[i].w+items[i].x)||(player.x+player.spriteData.width >= items[i].x && player.x+player.spriteData.width <= items[i].w+items[i].x)||(player.x+player.spriteData.width/2 >= items[i].x && player.x+player.spriteData.width/2 <= items[i].w+items[i].x))
         {
-            if(((player.y >= itemi->h + itemi->y)||(player.y+player.spriteData.width >= itemi->h + itemi->y)||(player.y+player.spriteData.width/2 >= itemi->h + itemi->y))&&(player.y + player._dy * elapsedTime <= itemi->h + itemi->y))// вверхняя
+            if(((player.y >= items[i].h + items[i].y)||(player.y+player.spriteData.width >= items[i].h + items[i].y)||(player.y+player.spriteData.width/2 >= items[i].h + items[i].y))&&(player.y + player._dy * elapsedTime <= items[i].h + items[i].y))// вверхняя
             {
                 player._dy = 0;
-                //player.y = itemi->h + itemi->y;
+                //player.y = items[i].h + items[i].y;
             }
-            else if(((player.y + player.spriteData.height <= itemi->y)||(player.y + player.spriteData.height + player.spriteData.width <= itemi->y)||(player.y + player.spriteData.height + player.spriteData.width/2 <= itemi->y))&&(player.y + player.spriteData.height + player._dy * elapsedTime >= itemi->y))// нижняя
+            else if(((player.y + player.spriteData.height <= items[i].y)||(player.y + player.spriteData.height + player.spriteData.width <= items[i].y)||(player.y + player.spriteData.height + player.spriteData.width/2 <= items[i].y))&&(player.y + player.spriteData.height + player._dy * elapsedTime >= items[i].y))// нижняя
             {
                 player._dy = 0;
-                //player.y = itemi->y - player.spriteData.height;
+                //player.y = items[i].y - player.spriteData.height;
             }
         }
-        if((player.y >= itemi->y && player.y <= itemi->h+itemi->y)||(player.y+player.spriteData.height >= itemi->y && player.y+player.spriteData.height <= itemi->h+itemi->y)||(player.y+player.spriteData.height/2 >= itemi->y && player.y+player.spriteData.height/2 <= itemi->h+itemi->y))
+        if((player.y >= items[i].y && player.y <= items[i].h+items[i].y)||(player.y+player.spriteData.height >= items[i].y && player.y+player.spriteData.height <= items[i].h+items[i].y)||(player.y+player.spriteData.height/2 >= items[i].y && player.y+player.spriteData.height/2 <= items[i].h+items[i].y))
         {
-            if(((player.x >= itemi->w + itemi->x)||(player.x+player.spriteData.height >= itemi->w + itemi->x)||(player.x+player.spriteData.height/2 >= itemi->w + itemi->x))&&(player.x + player._dx * elapsedTime <= itemi->w+itemi->x))//Левая
+            if(((player.x >= items[i].w + items[i].x)||(player.x+player.spriteData.height >= items[i].w + items[i].x)||(player.x+player.spriteData.height/2 >= items[i].w + items[i].x))&&(player.x + player._dx * elapsedTime <= items[i].w+items[i].x))//Левая
             {
                 player._dx = 0;
-                //player.x = itemi->w + itemi->x;
+                //player.x = items[i].w + items[i].x;
             }
-            else if(((player.x + player.spriteData.width <= itemi->x)||(player.x + player.spriteData.width+player.spriteData.height <= itemi->x)||(player.x + player.spriteData.width+player.spriteData.height/2 <= itemi->x))&&(player.x + player.spriteData.width + player._dx * elapsedTime >= itemi->x)) //Правая
+            else if(((player.x + player.spriteData.width <= items[i].x)||(player.x + player.spriteData.width+player.spriteData.height <= items[i].x)||(player.x + player.spriteData.width+player.spriteData.height/2 <= items[i].x))&&(player.x + player.spriteData.width + player._dx * elapsedTime >= items[i].x)) //Правая
             {
                 player._dx = 0;
-                //player.x = itemi->x - player.spriteData.width;
+                //player.x = items[i].x - player.spriteData.width;
             }
         }
     }
