@@ -24,7 +24,7 @@ void Level::update(int elapsedTime, Player &player)
 
 void Level::draw(Graphics &graphics)
 {
-    floor.drawFloor(graphics.getRenderer());
+    //floor.drawFloor(graphics.getRenderer());
     for(int i = 0; i < walls.size(); i++)
         walls[i].drawWall(graphics.getRenderer());
 }

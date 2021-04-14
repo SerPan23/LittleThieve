@@ -27,8 +27,8 @@ void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, Floor &floor)
     main_wallAngle4.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wallAngle(137).bmp");
     floor = floor1;
 
-    Wall wall_1(1, 767, 100, 32, 288, 32);
-    Wall wall_2(1, 479, 356, 288, 32, 32);
+    Wall wall_1(1, 767, 98, 32, 288, 32);
+    Wall wall_2(1, 479, 354, 288, 32, 32);
     Wall wall_3(1, 100, 356, 150, 32, 32);
     Wall wall_4(1, 767, 625, 32, 288, 32);
     walls.push_back(main_wall_1);
