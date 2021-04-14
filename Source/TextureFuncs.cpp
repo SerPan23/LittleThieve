@@ -80,8 +80,11 @@ void drawTexture(vector <vector<SDL_Color> > texture, SDL_Renderer *renderer, in
             for(int j = 0; j < texture[i].size(); j++)
             {
                 SDL_Color pixelColor = texture[i][j];
-                SDL_SetRenderDrawColor(renderer, (int)pixelColor.r, (int)pixelColor.g, (int)pixelColor.b, 255);
-                SDL_RenderDrawPoint(renderer, i+x, j+y);
+                if((int)pixelColor.a > 0)
+                {
+                    SDL_SetRenderDrawColor(renderer, (int)pixelColor.r, (int)pixelColor.g, (int)pixelColor.b, (int)pixelColor.a);
+                    SDL_RenderDrawPoint(renderer, i+x, j+y);
+                }
             }
         }
 }
