@@ -19,6 +19,33 @@ Game::~Game() {
 
 }
 
+void Game::keyEvents(SDL_Event event)
+{
+    if (event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)
+    {
+        _player.moveTop();
+    }
+
+    if (event.key.keysym.scancode == SDL_SCANCODE_DOWN || event.key.keysym.scancode == SDL_SCANCODE_S)
+    {
+        _player.moveDown();
+    }
+
+    if (event.key.keysym.scancode == SDL_SCANCODE_LEFT || event.key.keysym.scancode == SDL_SCANCODE_A)
+    {
+        _player.moveLeft();
+    }
+
+    if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT || event.key.keysym.scancode == SDL_SCANCODE_D)
+    {
+        _player.moveRight();
+    }
+    if (event.key.keysym.scancode == SDL_SCANCODE_E)
+    {
+        _player.takeSMT();
+    }
+}
+
 void Game::gameLoop() {
 
     SDL_Event event;
@@ -38,7 +65,8 @@ void Game::gameLoop() {
                 quit = true;
 
             if(event.type == SDL_KEYDOWN)
-                _player.keyEvents(event);
+                //_player.keyEvents(event);
+                keyEvents(event);
         }
 
         const int CURRENT_TIME_MS = SDL_GetTicks();

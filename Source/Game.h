@@ -16,6 +16,8 @@ private:
 	void draw(Graphics &graphics);
 	void update(float elapsedTime);
 
+	void keyEvents(SDL_Event event);
+
 	Player _player;
 	Level _level;
 	Graphics _graphics;
