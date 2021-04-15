@@ -38,7 +38,7 @@ void Game::gameLoop() {
                 quit = true;
 
             if(event.type == SDL_KEYDOWN)
-                _player.movePlayer(event);
+                _player.keyEvents(event);
         }
 
         const int CURRENT_TIME_MS = SDL_GetTicks();

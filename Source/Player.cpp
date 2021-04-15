@@ -27,8 +27,11 @@ void Player::moveStop(){
     this-> _dy = 0.0f;
 }
 
+void Player::takeSMT(){
+    cout << "E pressed" << endl;
+}
 
-void Player::movePlayer(SDL_Event event)
+void Player::keyEvents(SDL_Event event)
 {
         if (event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)
         {
@@ -48,6 +51,10 @@ void Player::movePlayer(SDL_Event event)
         if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT || event.key.keysym.scancode == SDL_SCANCODE_D)
         {
             this->moveRight();
+        }
+        if (event.key.keysym.scancode == SDL_SCANCODE_E)
+        {
+            this->takeSMT();
         }
         //if(!(event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)&&!(event.key.keysym.scancode == SDL_SCANCODE_DOWN || event.key.keysym.scancode == SDL_SCANCODE_S)&&!(event.key.keysym.scancode == SDL_SCANCODE_LEFT || event.key.keysym.scancode == SDL_SCANCODE_A)&&!(event.key.keysym.scancode == SDL_SCANCODE_RIGHT || event.key.keysym.scancode == SDL_SCANCODE_D))
             //this->moveStop();

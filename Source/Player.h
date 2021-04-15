@@ -24,13 +24,14 @@ class Player{
         }
         Player(){}
 
-        void movePlayer(SDL_Event event);
+        void keyEvents(SDL_Event event);
 
         void moveLeft();
         void moveRight();
         void moveTop();
         void moveDown();
         void moveStop();
+        void takeSMT();
 
         void update(float elapsedTime);
         void drawPlayer(SDL_Renderer *renderer);
