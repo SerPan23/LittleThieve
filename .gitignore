@@ -57,3 +57,5 @@ Project/LittleThieve/LittleThieve.depend
 Project/LittleThieve/obj/Debug/Source/main.o
 *.exe
 Project/LittleThieve/LittleThieve.depend
+LIBS/SDL2_image-2.0.5-i686-w64-mingw32/include/SDL2/SDL_image.h
+LIBS/SDL2_image-2.0.5-i686-w64-mingw32/lib/pkgconfig/SDL2_image.pc
