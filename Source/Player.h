@@ -12,6 +12,7 @@ class Player{
         //int width = 48;
         //int height = 48;
         float speed = 0.4f;
+        int takedRadius = 10;
         float _dx = 0.0f, _dy = 0.0f;
         //vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
         SpriteData spriteData;

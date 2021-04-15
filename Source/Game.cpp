@@ -54,13 +54,13 @@ void Game::checkItemsAround()
     {
         if(items[i].y >= _player.y && items[i].y <= _player.y+_player.spriteData.height)
         {
-            if(_player.x >= items[i].x+items[i].spriteData.width && _player.x-10 <= items[i].x+items[i].spriteData.width)
+            if(_player.x >= items[i].x+items[i].spriteData.width && _player.x-_player.takedRadius <= items[i].x+items[i].spriteData.width)
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
                 items.erase(items.begin() + i);
             }
-            if(_player.x+_player.spriteData.width <= items[i].x && _player.x+10+_player.spriteData.width >= items[i].x)
+            if(_player.x+_player.spriteData.width <= items[i].x && _player.x+_player.takedRadius+_player.spriteData.width >= items[i].x)
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
@@ -69,13 +69,13 @@ void Game::checkItemsAround()
         }
         if(items[i].x >= _player.x && items[i].x <= _player.x+_player.spriteData.width)
         {
-            if(_player.y >= items[i].y+items[i].spriteData.height && _player.y-10 <= items[i].y+items[i].spriteData.height)
+            if(_player.y >= items[i].y+items[i].spriteData.height && _player.y-_player.takedRadius <= items[i].y+items[i].spriteData.height)
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
                 items.erase(items.begin() + i);
             }
-            if(_player.y+_player.spriteData.height <= items[i].y && _player.y+10+_player.spriteData.height >= items[i].y)
+            if(_player.y+_player.spriteData.height <= items[i].y && _player.y+_player.takedRadius+_player.spriteData.height >= items[i].y)
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
