@@ -17,6 +17,7 @@ private:
 	void update(float elapsedTime);
 
 	void keyEvents(SDL_Event event);
+	void checkItemsAround();
 
 	Player _player;
 	Level _level;

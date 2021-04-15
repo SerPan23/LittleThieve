@@ -11,6 +11,7 @@
 
 class Item{
 public:
+    short id;
     int x;
     int y;
     int w;
@@ -19,8 +20,9 @@ public:
     //int r, g, b;
     SpriteData spriteData;
     Item(){}
-    Item(int x, int y, int w, int h, int type)
+    Item(int id, int x, int y, int w, int h, int type)
     {
+        this->id = id;
         this->x = x;
         this->y = y;
         this->w = w;

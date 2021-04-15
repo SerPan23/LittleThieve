@@ -42,7 +42,30 @@ void Game::keyEvents(SDL_Event event)
     }
     if (event.key.keysym.scancode == SDL_SCANCODE_E)
     {
-        _player.takeSMT();
+        checkItemsAround();
+        //_player.takeSMT();
+    }
+}
+
+void Game::checkItemsAround()
+{
+    vector <Item> items = _level.items;
+    for(int i = 0; i < items.size(); i++)
+    {
+        if(items[i].y >= _player.y && items[i].y <= _player.y+_player.spriteData.height)
+        {
+            if(_player.x >= items[i].x+items[i].spriteData.width && _player.x-10 <= items[i].x+items[i].spriteData.width)
+                cout << "Taked" << endl;
+            if(_player.x+_player.spriteData.width <= items[i].x && _player.x+10+_player.spriteData.width >= items[i].x)
+                cout << "Taked" << endl;
+        }
+        if(items[i].x >= _player.x && items[i].x <= _player.x+_player.spriteData.width)
+        {
+            if(_player.y >= items[i].y+items[i].spriteData.height && _player.y-10 <= items[i].y+items[i].spriteData.height)
+                cout << "Taked" << endl;
+            if(_player.y+_player.spriteData.height <= items[i].y && _player.y+10+_player.spriteData.height >= items[i].y)
+                cout << "Taked" << endl;
+        }
     }
 }
 
