@@ -92,7 +92,7 @@ void Game::gameLoop() {
     Graphics graphics(true);
     this->_level = Level(1, graphics);
 
-    this->_player = Player(1334, 495, 48, 48);
+    this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
 
     int LAST_UPDATE_TIME = SDL_GetTicks();

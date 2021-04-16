@@ -16,12 +16,10 @@ class Player{
         float _dx = 0.0f, _dy = 0.0f;
         //vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
         SpriteData spriteData;
-        Player(int x, int y, int width, int height)
+        Player(int x, int y)
         {
             this->x = x;
             this->y = y;
-            this->spriteData.width = width;
-            this->spriteData.height = height;
         }
         Player(){}
 

@@ -1,9 +1,14 @@
 #include "Item.h"
 #include "Game.h"
 #include "LevelBulders.h"
+#include "Player.h"
+#include "Globals.h"
 
-void    Build_lvl_1(SDL_Renderer *renderer, vector <Wall> &walls, vector <Item> &items, Floor &floor)
+void    Build_lvl_1(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <Wall> &walls, vector <Item> &items, Floor &floor)
 {
+    playerSpawnPoint.x = 1334;
+    playerSpawnPoint.y = 495;
+
     Floor floor1(50, 50, 1394, 914);
     Wall main_wall_1(1, 98, 50, 1298, 48, 48); // 1, 50, 50, 1394, 48, 48
     Wall main_wall_2(1, 50, 98, 48, 818, 48); // 1, 50, 50, 48, 914, 48
