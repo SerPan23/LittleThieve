@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../Source/Alphabet.cpp" />
+		<Unit filename="../../Source/Alphabet.h" />
 		<Unit filename="../../Source/Build_lvl_1.cpp" />
 		<Unit filename="../../Source/Floor.h" />
 		<Unit filename="../../Source/Game.cpp" />
