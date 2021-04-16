@@ -132,12 +132,6 @@ void Game::draw(Graphics &graphics) {
     //Build_lvl_1(graphics.getRenderer());
     _level.draw(graphics);
     _player.drawPlayer(graphics.getRenderer());
-    SDL_Color c;
-    c.r = 255;
-    c.g = 255;
-    c.b = 0;
-    c.a = 255;
-    _alphabet.drawLetter(graphics.getRenderer(), 'A', 500, 600, c);
     graphics.flip();
 }
 
