@@ -14,6 +14,7 @@ class Player{
         float speed = 0.4f;
         int takedRadius = 10;
         float _dx = 0.0f, _dy = 0.0f;
+        int currentPoints = 0;
         //vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
         SpriteData spriteData;
         Player(int x, int y)

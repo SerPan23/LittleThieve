@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 
+#include <SDL_image.h>
+
 #include "it_math.h"
 
 using namespace std;

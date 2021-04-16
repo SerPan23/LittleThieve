@@ -5,6 +5,7 @@
 #include "Wall.h"
 #include "TextureFuncs.h"
 
+
 namespace {
 	const int FPS = 50;
 	const int MAX_FRAME_TIME = 1000 / FPS;
@@ -58,13 +59,13 @@ void Game::checkItemsAround()
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
-                items.erase(items.begin() + i);
+                _player.currentPoints += 1;
             }
             if(_player.x+_player.spriteData.width <= items[i].x && _player.x+_player.takedRadius+_player.spriteData.width >= items[i].x)
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
-                items.erase(items.begin() + i);
+                _player.currentPoints += 1;
             }
         }
         if(items[i].x >= _player.x && items[i].x <= _player.x+_player.spriteData.width)
@@ -73,13 +74,13 @@ void Game::checkItemsAround()
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
-                items.erase(items.begin() + i);
+                _player.currentPoints += 1;
             }
             if(_player.y+_player.spriteData.height <= items[i].y && _player.y+_player.takedRadius+_player.spriteData.height >= items[i].y)
             {
                 cout << "Taked" << endl;
                 _level.items.erase(_level.items.begin() + i);
-                items.erase(items.begin() + i);
+                _player.currentPoints += 1;
             }
         }
     }
@@ -94,6 +95,12 @@ void Game::gameLoop() {
 
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
+
+
+    Alphabet alphabet;
+    alphabet.loadAlphabet("..\\..\\Source\\Sprites\\alphabet\\alphabet_24px.png");
+    _alphabet = alphabet;
+
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
@@ -125,6 +132,12 @@ void Game::draw(Graphics &graphics) {
     //Build_lvl_1(graphics.getRenderer());
     _level.draw(graphics);
     _player.drawPlayer(graphics.getRenderer());
+    SDL_Color c;
+    c.r = 255;
+    c.g = 255;
+    c.b = 0;
+    c.a = 255;
+    _alphabet.drawLetter(graphics.getRenderer(), 'A', 500, 600, c);
     graphics.flip();
 }
 

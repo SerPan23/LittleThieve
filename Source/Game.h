@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Graphics.h"
 #include "Level.h"
+#include "Alphabet.h"
 
 class Game{
 public:
@@ -22,6 +23,7 @@ private:
 	Player _player;
 	Level _level;
 	Graphics _graphics;
+	Alphabet _alphabet;
 };
 
 

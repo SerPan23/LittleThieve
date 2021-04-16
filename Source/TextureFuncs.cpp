@@ -1,7 +1,5 @@
 #include "TextureFuncs.h"
 
-#include <SDL_image.h>
-
 Uint32 getpixel(SDL_Surface *surface, int x, int y)
 {
     int bpp = surface->format->BytesPerPixel;

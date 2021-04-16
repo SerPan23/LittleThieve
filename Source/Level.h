@@ -18,6 +18,7 @@ public:
 	Floor floor;
     vector <Item> items;
     Vector2 _playerSpawnPoint;
+    int necessaryPoints;
 
 	void update(int elapsedTime, Player &player);
 	void draw(Graphics &graphics);
