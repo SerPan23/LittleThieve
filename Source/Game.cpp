@@ -150,7 +150,7 @@ void Game::draw(Graphics &graphics) {
             c.g = 255;
             c.b = 0;
             c.a = 255;
-            string msg = "YOU WON!";
+            string msg = "YOU WIN!";
             _alphabet.drawText(graphics.getRenderer(), msg, 700, 475, c);
         }
         else
