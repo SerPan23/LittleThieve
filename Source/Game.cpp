@@ -104,7 +104,7 @@ void Game::gameLoop() {
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
-    this->_level._TIME = 7*1000;
+    this->_level._TIME = 8*1000;
     bool quit = false;
     while (!quit) {
         while(SDL_PollEvent(&event)){
