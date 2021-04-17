@@ -132,22 +132,12 @@ void Game::draw(Graphics &graphics) {
     //Build_lvl_1(graphics.getRenderer());
     _level.draw(graphics);
     _player.drawPlayer(graphics.getRenderer());
-    SDL_Color c;
-    c.r = 255;
-    c.g = 255;
-    c.b = 0;
-    c.a = 255;
-    _alphabet.drawLetter(graphics.getRenderer(), 'S', 10, 10, c);
-    _alphabet.drawLetter(graphics.getRenderer(), 'C', 40, 10, c);
-    _alphabet.drawLetter(graphics.getRenderer(), 'O', 70, 10, c);
-    _alphabet.drawLetter(graphics.getRenderer(), 'R', 100, 10, c);
-    _alphabet.drawLetter(graphics.getRenderer(), 'E', 120, 10, c);
-    _alphabet.drawLetter(graphics.getRenderer(), ':', 150, 10, c);
-    _alphabet.drawLetter(graphics.getRenderer(), _player.currentPoints+48, 180, 10, c);
+    _hud.draw(graphics.getRenderer());
     graphics.flip();
 }
 
 void Game::update(float elapsedTime) {
     this->_level.update(elapsedTime, this->_player);
     this->_player.update(elapsedTime);
+    this->_hud.update(this->_player.currentPoints, _alphabet);
 }

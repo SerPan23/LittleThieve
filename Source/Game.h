@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Graphics.h"
 #include "Level.h"
+#include "HUD.h"
 #include "Alphabet.h"
 
 class Game{
@@ -22,6 +23,7 @@ private:
 
 	Player _player;
 	Level _level;
+	HUD _hud;
 	Graphics _graphics;
 	Alphabet _alphabet;
 };
