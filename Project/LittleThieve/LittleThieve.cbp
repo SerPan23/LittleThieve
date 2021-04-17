@@ -40,6 +40,8 @@
 		<Unit filename="../../Source/Globals.h" />
 		<Unit filename="../../Source/Graphics.cpp" />
 		<Unit filename="../../Source/Graphics.h" />
+		<Unit filename="../../Source/HUD.cpp" />
+		<Unit filename="../../Source/HUD.h" />
 		<Unit filename="../../Source/Item.h" />
 		<Unit filename="../../Source/Level.cpp" />
 		<Unit filename="../../Source/Level.h" />

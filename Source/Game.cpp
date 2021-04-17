@@ -104,6 +104,7 @@ void Game::gameLoop() {
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
+    this->_level._TIME = 7*1000;
     bool quit = false;
     while (!quit) {
         while(SDL_PollEvent(&event)){
@@ -118,8 +119,13 @@ void Game::gameLoop() {
         const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
 
+		this->_level._TIME -= ELAPSED_TIME_MS;int _TIME;
+
+
+
 		this->_graphics = graphics;
 		this->update(it_min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
+
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
 		this->draw(graphics);
     }
@@ -129,15 +135,40 @@ void Game::gameLoop() {
 
 void Game::draw(Graphics &graphics) {
     graphics.clear();
-    //Build_lvl_1(graphics.getRenderer());
-    _level.draw(graphics);
-    _player.drawPlayer(graphics.getRenderer());
-    _hud.draw(graphics.getRenderer());
+    if(this->_level._TIME > 0)
+    {
+        _level.draw(graphics);
+        _player.drawPlayer(graphics.getRenderer());
+        _hud.draw(graphics.getRenderer());
+    }
+    else
+    {
+        if(this->_player.currentPoints == this->_level.necessaryPoints)
+        {
+            SDL_Color c;
+            c.r = 0;
+            c.g = 255;
+            c.b = 0;
+            c.a = 255;
+            string msg = "YOU WON!";
+            _alphabet.drawText(graphics.getRenderer(), msg, 700, 475, c);
+        }
+        else
+        {
+            SDL_Color c;
+            c.r = 255;
+            c.g = 0;
+            c.b = 0;
+            c.a = 255;
+            string msg = "YOU LOSE!";
+            _alphabet.drawText(graphics.getRenderer(), msg, 700, 475, c);
+        }
+    }
     graphics.flip();
 }
 
 void Game::update(float elapsedTime) {
     this->_level.update(elapsedTime, this->_player);
     this->_player.update(elapsedTime);
-    this->_hud.update(this->_player.currentPoints, _alphabet);
+    this->_hud.update(_alphabet, this->_player.currentPoints, this->_level._TIME);
 }

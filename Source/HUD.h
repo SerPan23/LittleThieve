@@ -7,10 +7,11 @@
 class HUD{
 public:
     int score;
+    int time;
 
     Alphabet _alphabet;
 
-    void update(int playerScore, Alphabet alphabet);
+    void update(Alphabet alphabet, int playerScore, int t);
     void draw(SDL_Renderer *renderer);
 };
 
