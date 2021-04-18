@@ -21,9 +21,9 @@ public:
     int necessaryPoints;
     float _TIME;
 
-	void update(int elapsedTime, Player &player);
+	void update(float elapsedTime, Player &player);
 	void draw(Graphics &graphics);
-	void checkCollision(int elapsedTime, Player &player);
+	void checkCollision(float elapsedTime, Player &player);
 
 
 private:

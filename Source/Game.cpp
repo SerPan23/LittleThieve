@@ -22,7 +22,7 @@ Game::Game(Graphics &graphics, Alphabet &alphabet) {
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
 
-    this->_level._TIME = 15;
+    this->_level._TIME = 30;
 
     //this->gameLoop();
 }

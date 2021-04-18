@@ -17,7 +17,7 @@ void Level::loadMap(int LevelIndex, Graphics &graphics)
         Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints);
 }
 
-void Level::update(int elapsedTime, Player &player)
+void Level::update(float elapsedTime, Player &player)
 {
     checkCollision(elapsedTime, player);
 }
@@ -31,7 +31,7 @@ void Level::draw(Graphics &graphics)
         items[i].draw(graphics.getRenderer());
 }
 
-void Level::checkCollision(int elapsedTime, Player &player)
+void Level::checkCollision(float elapsedTime, Player &player)
 {
     for(int i = 0; i < walls.size(); i++)
     {
