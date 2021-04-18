@@ -11,7 +11,7 @@
 
 using namespace std;
 
-enum SCREENS {start, play};
+enum SCREENS {start, play, levelend};
 
 //draw funcs
 void    line_vertical(SDL_Renderer *renderer, int x, int y, int y2, int r, int g, int b);

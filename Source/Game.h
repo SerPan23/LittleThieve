@@ -19,11 +19,13 @@ public:
 public:
 	//void gameLoop();
 	void draw(Graphics &graphics);
-	void update(float elapsedTime, Input &input);
+	void update(float elapsedTime, Input &input, SCREENS &newScreen);
 
 	//void keyEvents(SDL_Event event);
 	void keyEvents(Input &input);
 	void checkItemsAround();
+
+	bool isWin;
 
 
 	Player _player;

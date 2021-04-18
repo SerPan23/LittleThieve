@@ -22,7 +22,7 @@ Game::Game(Graphics &graphics, Alphabet &alphabet) {
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
 
-    this->_level._TIME = 30;
+    this->_level._TIME = 15;
 
     //this->gameLoop();
 }
@@ -167,41 +167,24 @@ void Game::checkItemsAround()
 
 void Game::draw(Graphics &graphics) {
     graphics.clear();
-    if(this->_level._TIME > 0)
-    {
-        _level.draw(graphics);
-        _player.drawPlayer(graphics.getRenderer());
-        _hud.draw(graphics.getRenderer());
-    }
-    else
-    {
-        if(this->_player.currentPoints == this->_level.necessaryPoints)
-        {
-            SDL_Color c;
-            c.r = 0;
-            c.g = 255;
-            c.b = 0;
-            c.a = 255;
-            string msg = "YOU WIN!";
-            _alphabet.drawText(graphics.getRenderer(), msg, 700, 475, c);
-        }
-        else
-        {
-            SDL_Color c;
-            c.r = 255;
-            c.g = 0;
-            c.b = 0;
-            c.a = 255;
-            string msg = "YOU LOSE!";
-            _alphabet.drawText(graphics.getRenderer(), msg, 700, 475, c);
-        }
-    }
+
+    _level.draw(graphics);
+    _player.drawPlayer(graphics.getRenderer());
+    _hud.draw(graphics.getRenderer());
 
     graphics.flip();
 }
 
-void Game::update(float elapsedTime, Input &input) {
+void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
     this->_level._TIME -= elapsedTime;
+    if(this->_level._TIME <= 0)
+    {
+        if(this->_player.currentPoints == this->_level.necessaryPoints)
+            isWin = 1;
+        else
+            isWin = 0;
+        newScreen = levelend;
+    }
 
     keyEvents(input);
 
