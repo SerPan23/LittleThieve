@@ -167,7 +167,6 @@ void Game::checkItemsAround()
 
 void Game::draw(Graphics &graphics) {
     graphics.clear();
-
     if(this->_level._TIME > 0)
     {
         _level.draw(graphics);

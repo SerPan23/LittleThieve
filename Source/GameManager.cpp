@@ -31,6 +31,10 @@ GameManager::~GameManager() {
 
 
 void GameManager::Update() {
+    if(newScreen != currentScreen)
+    {
+        currentScreen = newScreen;
+    }
     switch(currentScreen)
     {
         case start:
@@ -42,10 +46,6 @@ void GameManager::Update() {
     }
 }
 void GameManager::Render() {
-    if(newScreen != currentScreen)
-    {
-        currentScreen = newScreen;
-    }
     switch(currentScreen)
     {
         case start:
