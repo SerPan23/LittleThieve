@@ -11,16 +11,27 @@ namespace {
 	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 
-Game::Game() {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	this->gameLoop();
+Game::Game(Graphics &graphics, Alphabet &alphabet) {
+	//SDL_Init(SDL_INIT_EVERYTHING);
+	//Graphics graphics(true);
+	this->_graphics = graphics;
+	this->_alphabet = alphabet;
+
+	this->_level = Level(1, graphics);
+
+    this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
+    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
+
+    this->_level._TIME = 30;
+
+    //this->gameLoop();
 }
 
 Game::~Game() {
 
 }
 
-void Game::keyEvents(SDL_Event event)
+/*void Game::keyEvents(SDL_Event event)
 {
     if (event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)
     {
@@ -46,6 +57,23 @@ void Game::keyEvents(SDL_Event event)
         checkItemsAround();
         //_player.takeSMT();
     }
+}*/
+
+void Game::keyEvents(Input &input)
+{
+    if (input.isKeyHeld(SDL_SCANCODE_LEFT) == true || input.isKeyHeld(SDL_SCANCODE_A))
+        _player.moveLeft();
+    else if (input.isKeyHeld(SDL_SCANCODE_RIGHT) == true || input.isKeyHeld(SDL_SCANCODE_D))
+        _player.moveRight();
+    if (input.isKeyHeld(SDL_SCANCODE_W) == true || input.isKeyHeld(SDL_SCANCODE_UP))
+        _player.moveTop();
+    else if (input.isKeyHeld(SDL_SCANCODE_S) == true || input.isKeyHeld(SDL_SCANCODE_DOWN))
+        _player.moveDown();
+    if (!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT) && !input.isKeyHeld(SDL_SCANCODE_A) && !input.isKeyHeld(SDL_SCANCODE_D) && !input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W))
+        _player.moveStop();
+
+    if (input.wasKeyPressed(SDL_SCANCODE_E) == true)
+			checkItemsAround();
 }
 
 void Game::checkItemsAround()
@@ -86,12 +114,11 @@ void Game::checkItemsAround()
     }
 }
 
-void Game::gameLoop() {
+/*void Game::gameLoop() {
 
     SDL_Event event;
 
-    Graphics graphics(true);
-    this->_level = Level(1, graphics);
+    this->_level = Level(1, this->_graphics);
 
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
@@ -111,30 +138,36 @@ void Game::gameLoop() {
             if (event.type == SDL_QUIT)
                 quit = true;
 
-            if(event.type == SDL_KEYDOWN)
+            //if(event.type == SDL_KEYDOWN)
                 //_player.keyEvents(event);
-                keyEvents(event);
+                //keyEvents(event);
+            if(event.type == SDL_MOUSEMOTION)
+            {
+                mouse.x = event.motion.x;
+                mouse.y = event.motion.y;
+            }
         }
+
+
 
         const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
 
-		this->_level._TIME -= ELAPSED_TIME_MS;int _TIME;
+		this->_level._TIME -= ELAPSED_TIME_MS;
 
 
-
-		this->_graphics = graphics;
-		this->update(it_min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
+		//this->update(it_min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
 
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
-		this->draw(graphics);
+		this->draw(this->_graphics);
     }
 
-}
+}*/
 
 
 void Game::draw(Graphics &graphics) {
     graphics.clear();
+
     if(this->_level._TIME > 0)
     {
         _level.draw(graphics);
@@ -164,10 +197,15 @@ void Game::draw(Graphics &graphics) {
             _alphabet.drawText(graphics.getRenderer(), msg, 700, 475, c);
         }
     }
+
     graphics.flip();
 }
 
-void Game::update(float elapsedTime) {
+void Game::update(float elapsedTime, Input &input) {
+    this->_level._TIME -= elapsedTime;
+
+    keyEvents(input);
+
     this->_level.update(elapsedTime, this->_player);
     this->_player.update(elapsedTime);
     this->_hud.update(_alphabet, this->_player.currentPoints, this->_level._TIME);

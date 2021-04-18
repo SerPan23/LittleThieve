@@ -19,7 +19,7 @@ public:
     vector <Item> items;
     Vector2 _playerSpawnPoint;
     int necessaryPoints;
-    int _TIME;
+    float _TIME;
 
 	void update(int elapsedTime, Player &player);
 	void draw(Graphics &graphics);

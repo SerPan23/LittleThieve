@@ -11,7 +11,7 @@ class Player{
         float y;
         //int width = 48;
         //int height = 48;
-        float speed = 0.4f;
+        float speed = 0.1f;
         int takedRadius = 10;
         float _dx = 0.0f, _dy = 0.0f;
         int currentPoints = 0;

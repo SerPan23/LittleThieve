@@ -64,10 +64,10 @@ void Player::update(float elapsedTime)
 {
     int t = this->x;
     //cout << this->_dx << " " << elapsedTime << " | " << this->_dx * elapsedTime << endl;
-    this->x += this->_dx * elapsedTime;
+    this->x += this->_dx * elapsedTime*1000;
     //cout << this->x-t << endl;
-    this->y += this->_dy * elapsedTime;
-    this-> _dx = 0.0f;
-    this-> _dy = 0.0f;
+    this->y += this->_dy * elapsedTime*1000;
+    //this-> _dx = 0.0f;
+    //this-> _dy = 0.0f;
 
 }

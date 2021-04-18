@@ -1,7 +1,10 @@
 #include "Game.h"
-#include "TextureFuncs.h"
+#include "GameManager.h"
 int main(int argc, char* argv[])
 {
-    Game game;
+    //Game game;
+
+    GameManager game;
+
     return 0;
 }

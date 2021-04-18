@@ -51,11 +51,10 @@ SpriteData loadTexture(char* path)
 {
     //SDL_Surface *image = SDL_LoadBMP(path);//"..\\..\\Source\\Sprites\\image.bmp"
     SDL_Surface *image = IMG_Load(path);
-    vector <vector<SDL_Color> > texture(image->h, vector<SDL_Color>(image->w));
-
-    for(int i = 0; i < image->h; i++)
+    vector <vector<SDL_Color> > texture(image->w, vector<SDL_Color>(image->h));
+    for(int i = 0; i < image->w; i++)
     {
-        for(int j = 0; j < image->w; j++)
+        for(int j = 0; j < image->h; j++)
         {
             SDL_Color pixelColor;
             Uint32 data = getpixel(image, i, j);
@@ -74,15 +73,15 @@ SpriteData loadTexture(char* path)
 void drawTexture(vector <vector<SDL_Color> > texture, SDL_Renderer *renderer, int x, int y)
 {
     for(int i = 0; i < texture.size(); i++)
+    {
+        for(int j = 0; j < texture[i].size(); j++)
         {
-            for(int j = 0; j < texture[i].size(); j++)
+            SDL_Color pixelColor = texture[i][j];
+            if((int)pixelColor.a > 0)
             {
-                SDL_Color pixelColor = texture[i][j];
-                if((int)pixelColor.a > 0)
-                {
-                    SDL_SetRenderDrawColor(renderer, (int)pixelColor.r, (int)pixelColor.g, (int)pixelColor.b, (int)pixelColor.a);
-                    SDL_RenderDrawPoint(renderer, i+x, j+y);
-                }
+                SDL_SetRenderDrawColor(renderer, (int)pixelColor.r, (int)pixelColor.g, (int)pixelColor.b, (int)pixelColor.a);
+                SDL_RenderDrawPoint(renderer, i+x, j+y);
             }
         }
+    }
 }

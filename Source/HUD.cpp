@@ -33,6 +33,6 @@ void HUD::draw(SDL_Renderer *renderer)
     _alphabet.drawText(renderer, msg, 10, 10, c);
 
     string msgs = "Time:";
-    msgs += int_to_str(time/1000);
+    msgs += int_to_str(time);
     _alphabet.drawText(renderer, msgs, 1000, 10, c);
 }

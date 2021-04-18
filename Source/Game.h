@@ -7,25 +7,31 @@
 #include "Level.h"
 #include "HUD.h"
 #include "Alphabet.h"
+#include "Button.h"
+#include "Input.h"
 
 class Game{
 public:
-    Game();
+    Game(){}
+    Game(Graphics &graphics, Alphabet &alphabet);
 	~Game();
 
-private:
-	void gameLoop();
+public:
+	//void gameLoop();
 	void draw(Graphics &graphics);
-	void update(float elapsedTime);
+	void update(float elapsedTime, Input &input);
 
-	void keyEvents(SDL_Event event);
+	//void keyEvents(SDL_Event event);
+	void keyEvents(Input &input);
 	void checkItemsAround();
+
 
 	Player _player;
 	Level _level;
 	HUD _hud;
 	Graphics _graphics;
 	Alphabet _alphabet;
+	Vector2 mouse;
 };
 
 
