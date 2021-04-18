@@ -22,8 +22,11 @@ void Player::moveDown() {
 	this->_dy = this->speed;
 }
 
-void Player::moveStop(){
+void Player::moveStopX(){
     this-> _dx = 0.0f;
+}
+
+void Player::moveStopY(){
     this-> _dy = 0.0f;
 }
 
@@ -64,9 +67,9 @@ void Player::update(float elapsedTime)
 {
     int t = this->x;
     //cout << this->_dx << " " << elapsedTime << " | " << this->_dx * elapsedTime << endl;
-    this->x += this->_dx * elapsedTime*1000;
+    this->x += this->_dx * elapsedTime;
     //cout << this->x-t << endl;
-    this->y += this->_dy * elapsedTime*1000;
+    this->y += this->_dy * elapsedTime;
     //this-> _dx = 0.0f;
     //this-> _dy = 0.0f;
 

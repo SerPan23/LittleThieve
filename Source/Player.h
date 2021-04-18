@@ -11,7 +11,7 @@ class Player{
         float y;
         //int width = 48;
         //int height = 48;
-        float speed = 0.1f;
+        float speed = 100.0f;
         int takedRadius = 10;
         float _dx = 0.0f, _dy = 0.0f;
         int currentPoints = 0;
@@ -30,7 +30,8 @@ class Player{
         void moveRight();
         void moveTop();
         void moveDown();
-        void moveStop();
+        void moveStopX();
+        void moveStopY();
         void takeSMT();
 
         void update(float elapsedTime);
