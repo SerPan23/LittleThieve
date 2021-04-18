@@ -4,6 +4,12 @@ EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet)
 {
     this->isWin = isWin;
     this->alphabet = alphabet;
+
+    Button homeBtn(1, 600, 600);
+    homeBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\menuBtn.png");
+    homeBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\menuBtnHover.png");
+    homeBtn.currentState = homeBtn.idleState;
+    btns.push_back(homeBtn);
 }
 
 void EndLevelScreen::draw(Graphics &graphics)

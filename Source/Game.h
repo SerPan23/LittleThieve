@@ -21,6 +21,8 @@ public:
 	void draw(Graphics &graphics);
 	void update(float elapsedTime, Input &input, SCREENS &newScreen);
 
+	void gameReset();
+
 	//void keyEvents(SDL_Event event);
 	void keyEvents(Input &input);
 	void checkItemsAround();

@@ -13,6 +13,7 @@ Level::~Level() {}
 
 void Level::loadMap(int LevelIndex, Graphics &graphics)
 {
+    this->_TIME = levelTime;
     if(LevelIndex == 1)
         Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints);
 }

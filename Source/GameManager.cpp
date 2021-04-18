@@ -35,6 +35,8 @@ void GameManager::Update() {
     if(newScreen != currentScreen)
     {
         currentScreen = newScreen;
+        if(newScreen == play)
+            game.gameReset();
     }
     switch(currentScreen)
     {

@@ -20,6 +20,7 @@ public:
     Vector2 _playerSpawnPoint;
     int necessaryPoints;
     float _TIME;
+    float levelTime = 10;
 
 	void update(float elapsedTime, Player &player);
 	void draw(Graphics &graphics);

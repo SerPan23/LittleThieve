@@ -19,12 +19,19 @@ Game::Game(Graphics &graphics, Alphabet &alphabet) {
 
 	this->_level = Level(1, graphics);
 
+
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
 
-    this->_level._TIME = 30;
-
     //this->gameLoop();
+}
+
+void Game::gameReset()
+{
+    this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
+    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
+    _level = Level(1, _graphics);
+    isWin = 0;
 }
 
 Game::~Game() {
