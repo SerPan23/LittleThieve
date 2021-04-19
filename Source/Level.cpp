@@ -13,9 +13,9 @@ Level::~Level() {}
 
 void Level::loadMap(int LevelIndex, Graphics &graphics)
 {
-    this->_TIME = levelTime;
+    //this->_TIME = levelTime;
     if(LevelIndex == 1)
-        Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints);
+        Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints, this->_TIME);
 }
 
 void Level::update(float elapsedTime, Player &player)
