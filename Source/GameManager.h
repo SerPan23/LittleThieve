@@ -10,6 +10,7 @@
 #include "Input.h"
 #include "StartScreen.h"
 #include "EndLevelScreen.h"
+#include "InfoScreen.h"
 
 class GameManager {
 public:
@@ -31,6 +32,7 @@ public:
 
 	Game game;
 	StartScreen startScreen;
+	InfoScreen infoScreen;
 	EndLevelScreen endLevelScreen;
 
 
