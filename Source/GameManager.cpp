@@ -20,6 +20,7 @@ GameManager::GameManager()
 	this->game = game;
 
 	this->startScreen = StartScreen();
+    this->infoScreen = InfoScreen();
 	this->endLevelScreen = EndLevelScreen(this->game.isWin, alphabet);
 
 	Run();
@@ -43,6 +44,9 @@ void GameManager::Update() {
         case start:
             startScreen.update(mouse, events, newScreen);
             break;
+        case info:
+            infoScreen.update(mouse, events, newScreen);
+            break;
         case play:
             game.update(mTimer->DeltaTime(), input, newScreen);
             break;
@@ -57,6 +61,9 @@ void GameManager::Render() {
     {
         case start:
             startScreen.draw(graphics);
+            break;
+        case info:
+            infoScreen.draw(graphics);
             break;
         case play:
             game.draw(graphics);
