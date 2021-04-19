@@ -6,7 +6,7 @@
 
 void    Build_lvl_1(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <Wall> &walls, vector <Item> &items, Floor &floor, int &necessaryPoints, float &levelTime)
 {
-    levelTime = 3;
+    levelTime = 30;
     playerSpawnPoint.x = 1334;
     playerSpawnPoint.y = 495;
     necessaryPoints = 1;
@@ -20,6 +20,14 @@ void    Build_lvl_1(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     Wall main_wallAngle2(1, 1394, 50, 48, 48, 48);
     Wall main_wallAngle3(1, 50, 914, 48, 48, 48);
     Wall main_wallAngle4(1, 1394, 914, 48, 48, 48);
+
+    Wall kitchen_1(1, 98, 849, 512, 64, 64);
+    kitchen_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\kitchen_1.png");
+    walls.push_back(kitchen_1);
+
+    Wall bed_1(1, 638, 99, 128, 192, 64);
+    bed_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\bed_1.png");
+    walls.push_back(bed_1);
 
     floor1.spriteData = loadTexture("..\\..\\Source\\Sprites\\floor(96).bmp");
     main_wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\main_wall(111).bmp");
