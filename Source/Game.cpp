@@ -191,12 +191,15 @@ void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
     this->_level._TIME -= elapsedTime;
     if(this->_level._TIME <= 0)
     {
-        if(this->_player.currentPoints == this->_level.necessaryPoints)
-            isWin = 1;
-        else
-            isWin = 0;
         newScreen = levelend;
     }
+    if(this->_player.currentPoints == this->_level.necessaryPoints)
+    {
+        isWin = 1;
+
+    }
+    else
+        isWin = 0;
 
     keyEvents(input, newScreen);
 

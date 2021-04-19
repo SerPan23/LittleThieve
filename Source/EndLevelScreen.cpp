@@ -31,7 +31,7 @@ EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet)
 
 void EndLevelScreen::draw(Graphics &graphics)
 {
-    graphics.clear();
+    graphics.clear(21, 21, 21);
     if(isWin)
     {
             /*SDL_Color c;
@@ -42,7 +42,7 @@ void EndLevelScreen::draw(Graphics &graphics)
             string msg = "YOU WIN!";
             alphabet.drawText(graphics.getRenderer(), msg, 665, 450, c);*/
             SpriteData winText = loadTexture("..\\..\\Source\\Sprites\\winText.png");
-            drawTexture(winText.texture, graphics.getRenderer(), 600, 350);
+            drawTexture(winText.texture, graphics.getRenderer(), 615, 350);
     }
     else
     {

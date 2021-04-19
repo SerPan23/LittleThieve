@@ -21,7 +21,7 @@ StartScreen::StartScreen()
 
 void StartScreen::draw(Graphics &graphics)
 {
-    graphics.clear();
+    graphics.clear(21, 21, 21);
     for(int i = 0; i < btns.size(); i++)
     {
         btns[i].draw(graphics.getRenderer());

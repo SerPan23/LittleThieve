@@ -8,27 +8,32 @@ class Floor
 {
     public:
         int x, y;
-        int x1, y1;
+        int w, h;
 
     SpriteData spriteData;
 
     Floor(){}
-    Floor(int x, int y, int x1, int y1)
+    Floor(int x, int y, int w, int h)
     {
         this->x = x;
         this->y = y;
-        this->x1 = x1;
-        this->y1 = y1;
+        this->w = w;
+        this->h = h;
     }
 
     void    drawFloor(SDL_Renderer *renderer)
     {
-        for(int i = this->y; i <= this->y1; i += this->spriteData.height){
-                for(int j = this->x; j <= this->x1; j += this->spriteData.width)
-                {
-                    drawTexture(this->spriteData.texture, renderer, j, i);
-                }
+        if(this->spriteData.width == w && this->spriteData.height == h)
+        {
+            drawTexture(this->spriteData.texture, renderer, this->x, this->y);
         }
+        else
+            for(int i = this->y; i <= this->h+y; i += this->spriteData.height){
+                    for(int j = this->x; j <= this->w+x; j += this->spriteData.width)
+                    {
+                        drawTexture(this->spriteData.texture, renderer, j, i);
+                    }
+            }
     }
 };
 
