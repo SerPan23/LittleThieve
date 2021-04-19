@@ -2,7 +2,11 @@
 
 InfoScreen::InfoScreen()
 {
-
+    Button backBtn(1, 25, 25);
+    backBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\backBtn.png");
+    backBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\backBtnHover.png");
+    backBtn.currentState = backBtn.idleState;
+    btns.push_back(backBtn);
 }
 
 void InfoScreen::draw(Graphics &graphics)
