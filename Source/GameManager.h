@@ -38,6 +38,7 @@ public:
 	EndLevelScreen endLevelScreen;
 
 	int currentLevel = 1;
+	int numberOfLevel = 2;
 
 	void Run();
 

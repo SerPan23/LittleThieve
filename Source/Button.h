@@ -11,6 +11,7 @@ public:
     short id;
     int x, y;
     bool isHover = false;
+    bool needDraw = true;
     SpriteData currentState;
     SpriteData idleState;
     SpriteData hoverState;

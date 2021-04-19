@@ -53,7 +53,7 @@ void GameManager::Update() {
             break;
         case levelend:
             endLevelScreen.isWin = game.isWin;
-            endLevelScreen.update(mouse, events, newScreen);
+            endLevelScreen.update(mouse, events, newScreen, currentLevel, numberOfLevel);
             break;
     }
 }
