@@ -10,6 +10,11 @@ EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet)
     homeBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\menuBtnHover.png");
     homeBtn.currentState = homeBtn.idleState;
     btns.push_back(homeBtn);
+    Button homeBtn2(1, 625, 650);
+    homeBtn2.idleState = loadTexture("..\\..\\Source\\Sprites\\menuBtn.png");
+    homeBtn2.hoverState = loadTexture("..\\..\\Source\\Sprites\\menuBtnHover.png");
+    homeBtn2.currentState = homeBtn2.idleState;
+    btns.push_back(homeBtn2);
 
     Button nextLevelBtn(2, 625, 500);
     nextLevelBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\nextBtn.png");
@@ -45,7 +50,7 @@ void EndLevelScreen::draw(Graphics &graphics)
             c.b = 0;
             c.a = 255;
             string msg = "YOU LOSE!";
-            alphabet.drawText(graphics.getRenderer(), msg, 665, 450, c);
+            alphabet.drawText(graphics.getRenderer(), msg, 645, 450, c);
     }
     for(int i = 0; i < btns.size(); i++)
     {
@@ -62,18 +67,21 @@ void EndLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen,
         btns[0].needDraw = true;
         btns[1].needDraw = false;
         btns[2].needDraw = false;
+        btns[3].needDraw = false;
     }
     else if(!isWin)
     {
         btns[0].needDraw = false;
-        btns[1].needDraw = false;
-        btns[2].needDraw = true;
+        btns[1].needDraw = true;
+        btns[2].needDraw = false;
+        btns[3].needDraw = true;
     }
     else
     {
         btns[0].needDraw = false;
         btns[1].needDraw = true;
-        btns[2].needDraw = false;
+        btns[2].needDraw = true;
+        btns[3].needDraw = false;
     }
     for(int i = 0; i < btns.size(); i++)
     {
