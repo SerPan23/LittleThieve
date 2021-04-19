@@ -35,6 +35,7 @@ public:
 	InfoScreen infoScreen;
 	EndLevelScreen endLevelScreen;
 
+	int currentLevel = 1;
 
 	void Run();
 

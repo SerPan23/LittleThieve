@@ -13,7 +13,7 @@
 class Game{
 public:
     Game(){}
-    Game(Graphics &graphics, Alphabet &alphabet);
+    Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel);
 	~Game();
 
 public:
@@ -21,7 +21,7 @@ public:
 	void draw(Graphics &graphics);
 	void update(float elapsedTime, Input &input, SCREENS &newScreen);
 
-	void gameReset();
+	void gameReset(int &currentLevel);
 
 	//void keyEvents(SDL_Event event);
 	void keyEvents(Input &input);

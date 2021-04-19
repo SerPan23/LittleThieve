@@ -11,13 +11,13 @@ namespace {
 	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 
-Game::Game(Graphics &graphics, Alphabet &alphabet) {
+Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel) {
 	//SDL_Init(SDL_INIT_EVERYTHING);
 	//Graphics graphics(true);
 	this->_graphics = graphics;
 	this->_alphabet = alphabet;
 
-	this->_level = Level(1, graphics);
+	this->_level = Level(currentLevel, graphics);
 
 
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
@@ -26,11 +26,11 @@ Game::Game(Graphics &graphics, Alphabet &alphabet) {
     //this->gameLoop();
 }
 
-void Game::gameReset()
+void Game::gameReset(int &currentLevel)
 {
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
-    _level = Level(1, _graphics);
+    _level = Level(currentLevel, _graphics);
     isWin = 0;
 }
 

@@ -16,7 +16,7 @@ GameManager::GameManager()
 	currentScreen = start;
 	newScreen = currentScreen;
 
-	Game game(graphics, alphabet);
+	Game game(graphics, alphabet, currentLevel);
 	this->game = game;
 
 	this->startScreen = StartScreen();
@@ -37,7 +37,7 @@ void GameManager::Update() {
     {
         currentScreen = newScreen;
         if(newScreen == play)
-            game.gameReset();
+            game.gameReset(currentLevel);
     }
     switch(currentScreen)
     {
