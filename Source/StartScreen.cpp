@@ -2,7 +2,7 @@
 
 StartScreen::StartScreen()
 {
-    Button playBtn(1, 600, 400);
+    Button playBtn(1, 625, 450);
     playBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\playBtn.png");
     playBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\playBtnHover.png");
     playBtn.currentState = playBtn.idleState;
