@@ -96,7 +96,6 @@ void GameManager::Run() {
 				if (events.key.repeat == 0) {
 					input.keyDownEvent(events);
 				}
-				cout << "1" << endl;
 			}
 			else if (events.type == SDL_KEYUP) {
 				input.keyUpEvent(events);
