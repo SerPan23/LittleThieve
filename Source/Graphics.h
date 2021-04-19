@@ -12,6 +12,7 @@ public:
 
 	void flip();
 	void clear();
+	void clear(int r, int g, int b);
 
 	SDL_Renderer* getRenderer() const;
 
