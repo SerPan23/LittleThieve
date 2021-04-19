@@ -34,23 +34,27 @@ void EndLevelScreen::draw(Graphics &graphics)
     graphics.clear();
     if(isWin)
     {
-            SDL_Color c;
+            /*SDL_Color c;
             c.r = 0;
             c.g = 255;
             c.b = 0;
             c.a = 255;
             string msg = "YOU WIN!";
-            alphabet.drawText(graphics.getRenderer(), msg, 665, 450, c);
+            alphabet.drawText(graphics.getRenderer(), msg, 665, 450, c);*/
+            SpriteData winText = loadTexture("..\\..\\Source\\Sprites\\winText.png");
+            drawTexture(winText.texture, graphics.getRenderer(), 600, 350);
     }
     else
     {
-            SDL_Color c;
+            /*SDL_Color c;
             c.r = 255;
             c.g = 0;
             c.b = 0;
             c.a = 255;
             string msg = "YOU LOSE!";
-            alphabet.drawText(graphics.getRenderer(), msg, 645, 450, c);
+            alphabet.drawText(graphics.getRenderer(), msg, 645, 450, c);*/
+            SpriteData loseText = loadTexture("..\\..\\Source\\Sprites\\loseText.png");
+            drawTexture(loseText.texture, graphics.getRenderer(), 600, 350);
     }
     for(int i = 0; i < btns.size(); i++)
     {
