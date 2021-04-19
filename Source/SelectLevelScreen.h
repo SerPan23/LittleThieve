@@ -13,7 +13,7 @@ public:
     vector<Button> btns;
 
     void draw(Graphics &graphics);
-    void update(Vector2 &mouse, SDL_Event &events, SCREENS &newScreen);
+    void update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen);
 };
 
 #endif // SELECTLEVELSCREEN_H_INCLUDED

@@ -26,7 +26,7 @@ public:
 
 	SDL_Event events;
 	Input input;
-	Vector2 mouse;
+	Mouse mouse;
 
 	SCREENS currentScreen;
 	SCREENS newScreen;

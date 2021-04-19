@@ -43,17 +43,21 @@ void EndLevelScreen::draw(Graphics &graphics)
     graphics.flip();
 }
 
-void EndLevelScreen::update(Vector2 &mouse, SDL_Event &events, SCREENS &newScreen)
+void EndLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen)
 {
     for(int i = 0; i < btns.size(); i++)
     {
-        btns[i].checkHover(mouse);
-        if (events.type == SDL_MOUSEBUTTONDOWN)
+        btns[i].checkHover(mouse.pos);
+        //if (events.type == SDL_MOUSEBUTTONDOWN)
+        if(mouse.leftBtnPressed)
         {
             if(btns[i].checkClick())
             {
                 if(btns[i].id == 1)
+                {
+                    mouse.leftBtnPressed = false;
                     newScreen = start;
+                }
             }
         }
     }

@@ -29,21 +29,30 @@ void StartScreen::draw(Graphics &graphics)
     graphics.flip();
 }
 
-void StartScreen::update(Vector2 &mouse, SDL_Event &events, SCREENS &newScreen)
+void StartScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen)
 {
     for(int i = 0; i < btns.size(); i++)
     {
-        btns[i].checkHover(mouse);
-        if (events.type == SDL_MOUSEBUTTONDOWN)
+        btns[i].checkHover(mouse.pos);
+        if(mouse.leftBtnPressed)
         {
             if(btns[i].checkClick())
             {
                 if(btns[i].id == 1)
+                {
+                    mouse.leftBtnPressed = false;
                     newScreen = play;
+                }
                 else if(btns[i].id == 2)
+                {
+                    mouse.leftBtnPressed = false;
                     newScreen = selectLevel;
+                }
                 else if(btns[i].id == 3)
+                {
+                    mouse.leftBtnPressed = false;
                     newScreen = info;
+                }
             }
         }
     }

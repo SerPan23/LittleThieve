@@ -96,15 +96,20 @@ void GameManager::Run() {
 				if (events.key.repeat == 0) {
 					input.keyDownEvent(events);
 				}
+				cout << "1" << endl;
 			}
 			else if (events.type == SDL_KEYUP) {
 				input.keyUpEvent(events);
 			}
 			if(events.type == SDL_MOUSEMOTION)
             {
-                mouse.x = events.motion.x;
-                mouse.y = events.motion.y;
+                mouse.pos.x = events.motion.x;
+                mouse.pos.y = events.motion.y;
             }
+            if(events.type == SDL_MOUSEBUTTONDOWN && events.button.button == SDL_BUTTON_LEFT)
+                mouse.leftBtnPressed = true;
+            else
+                mouse.leftBtnPressed = false;
         }
         //if(mTimer->DeltaTime() >= (1.0f / FRAME_RATE)) {
             Update();

@@ -16,7 +16,7 @@ public:
     Alphabet alphabet;
 
     void draw(Graphics &graphics);
-    void update(Vector2 &mouse, SDL_Event &events, SCREENS &newScreen);
+    void update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen);
 };
 
 #endif // ENDLEVELSCREEN_H_INCLUDED

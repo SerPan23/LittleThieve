@@ -19,5 +19,10 @@ struct Vector2 {
 	}
 };
 
+class Mouse{
+public:
+    Vector2 pos;
+    bool leftBtnPressed = false;
+};
 
 #endif // GLOBALS_H_INCLUDED
