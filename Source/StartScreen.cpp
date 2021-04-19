@@ -22,6 +22,8 @@ StartScreen::StartScreen()
 void StartScreen::draw(Graphics &graphics)
 {
     graphics.clear(21, 21, 21);
+    SpriteData logo = loadTexture("..\\..\\Source\\Sprites\\logo.png");
+    drawTexture(logo.texture, graphics.getRenderer(), 475, 250);
     for(int i = 0; i < btns.size(); i++)
     {
         btns[i].draw(graphics.getRenderer());
