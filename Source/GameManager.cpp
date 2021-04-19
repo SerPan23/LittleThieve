@@ -13,9 +13,6 @@ GameManager::GameManager()
 	mQuit = false;
 	mTimer = Timer::Instance();
 
-	currentScreen = start;
-	newScreen = currentScreen;
-
 	Game game(graphics, alphabet, currentLevel);
 	this->game = game;
 

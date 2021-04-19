@@ -28,8 +28,8 @@ public:
 	Input input;
 	Mouse mouse;
 
-	SCREENS currentScreen;
-	SCREENS newScreen;
+	SCREENS currentScreen  = start;
+	SCREENS newScreen = currentScreen;
 
 	Game game;
 	StartScreen startScreen;

@@ -5,7 +5,7 @@ EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet)
     this->isWin = isWin;
     this->alphabet = alphabet;
 
-    Button homeBtn(1, 610, 500);
+    Button homeBtn(1, 625, 500);
     homeBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\menuBtn.png");
     homeBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\menuBtnHover.png");
     homeBtn.currentState = homeBtn.idleState;
@@ -23,7 +23,7 @@ void EndLevelScreen::draw(Graphics &graphics)
             c.b = 0;
             c.a = 255;
             string msg = "YOU WIN!";
-            alphabet.drawText(graphics.getRenderer(), msg, 625, 450, c);
+            alphabet.drawText(graphics.getRenderer(), msg, 665, 450, c);
     }
     else
     {
@@ -33,7 +33,7 @@ void EndLevelScreen::draw(Graphics &graphics)
             c.b = 0;
             c.a = 255;
             string msg = "YOU LOSE!";
-            alphabet.drawText(graphics.getRenderer(), msg, 625, 450, c);
+            alphabet.drawText(graphics.getRenderer(), msg, 665, 450, c);
     }
 
     for(int i = 0; i < btns.size(); i++)
