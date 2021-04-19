@@ -16,6 +16,8 @@ void Level::loadMap(int LevelIndex, Graphics &graphics)
     //this->_TIME = levelTime;
     if(LevelIndex == 1)
         Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints, this->_TIME);
+    else if(LevelIndex == 2)
+        Build_lvl_2(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints, this->_TIME);
 }
 
 void Level::update(float elapsedTime, Player &player)
