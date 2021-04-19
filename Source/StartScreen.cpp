@@ -34,7 +34,7 @@ void StartScreen::update(Vector2 &mouse, SDL_Event &events, SCREENS &newScreen)
     for(int i = 0; i < btns.size(); i++)
     {
         btns[i].checkHover(mouse);
-        if (events.type == SDL_MOUSEBUTTONDOWN)
+        if (events.type == SDL_MOUSEBUTTONUP)
         {
             if(btns[i].checkClick())
             {
