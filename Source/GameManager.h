@@ -11,6 +11,7 @@
 #include "StartScreen.h"
 #include "EndLevelScreen.h"
 #include "InfoScreen.h"
+#include "SelectLevelScreen.h"
 
 class GameManager {
 public:
@@ -33,6 +34,7 @@ public:
 	Game game;
 	StartScreen startScreen;
 	InfoScreen infoScreen;
+	SelectLevelScreen selectLevelScreen;
 	EndLevelScreen endLevelScreen;
 
 	int currentLevel = 1;
