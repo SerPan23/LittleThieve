@@ -24,7 +24,7 @@ public:
 	void gameReset(int &currentLevel);
 
 	//void keyEvents(SDL_Event event);
-	void keyEvents(Input &input);
+	void keyEvents(Input &input, SCREENS &newScreen);
 	void checkItemsAround();
 
 	bool isWin;

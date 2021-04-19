@@ -66,7 +66,7 @@ Game::~Game() {
     }
 }*/
 
-void Game::keyEvents(Input &input)
+void Game::keyEvents(Input &input, SCREENS &newScreen)
 {
     if (input.isKeyHeld(SDL_SCANCODE_LEFT) == true || input.isKeyHeld(SDL_SCANCODE_A))
         _player.moveLeft();
@@ -83,6 +83,9 @@ void Game::keyEvents(Input &input)
 
     if (input.wasKeyPressed(SDL_SCANCODE_E) == true)
         checkItemsAround();
+
+    if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true)
+        newScreen = start;
 }
 
 void Game::checkItemsAround()
@@ -195,7 +198,7 @@ void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
         newScreen = levelend;
     }
 
-    keyEvents(input);
+    keyEvents(input, newScreen);
 
     this->_level.update(elapsedTime, this->_player);
     this->_player.update(elapsedTime);

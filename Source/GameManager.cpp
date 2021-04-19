@@ -49,7 +49,7 @@ void GameManager::Update() {
             infoScreen.update(mouse, events, newScreen);
             break;
         case selectLevel:
-            selectLevelScreen.update(mouse, events, newScreen);
+            selectLevelScreen.update(mouse, events, newScreen, currentLevel);
             break;
         case play:
             game.update(mTimer->DeltaTime(), input, newScreen);
