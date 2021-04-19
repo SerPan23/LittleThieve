@@ -25,7 +25,7 @@ void SelectLevelScreen::update(Vector2 &mouse, SDL_Event &events, SCREENS &newSc
     for(int i = 0; i < btns.size(); i++)
     {
         btns[i].checkHover(mouse);
-        if (events.type == SDL_MOUSEBUTTONUP)
+        if (events.type == SDL_MOUSEBUTTONDOWN)
         {
             if(btns[i].checkClick())
             {
