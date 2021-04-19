@@ -34,6 +34,7 @@
 		<Unit filename="../../Source/Alphabet.cpp" />
 		<Unit filename="../../Source/Alphabet.h" />
 		<Unit filename="../../Source/Build_lvl_1.cpp" />
+		<Unit filename="../../Source/Build_lvl_2.cpp" />
 		<Unit filename="../../Source/Button.cpp" />
 		<Unit filename="../../Source/Button.h" />
 		<Unit filename="../../Source/EndLevelScreen.cpp" />
@@ -48,6 +49,8 @@
 		<Unit filename="../../Source/Graphics.h" />
 		<Unit filename="../../Source/HUD.cpp" />
 		<Unit filename="../../Source/HUD.h" />
+		<Unit filename="../../Source/InfoScreen.cpp" />
+		<Unit filename="../../Source/InfoScreen.h" />
 		<Unit filename="../../Source/Input.cpp" />
 		<Unit filename="../../Source/Input.h" />
 		<Unit filename="../../Source/Item.h" />
@@ -57,6 +60,8 @@
 		<Unit filename="../../Source/LittleThieve.h" />
 		<Unit filename="../../Source/Player.cpp" />
 		<Unit filename="../../Source/Player.h" />
+		<Unit filename="../../Source/SelectLevelScreen.cpp" />
+		<Unit filename="../../Source/SelectLevelScreen.h" />
 		<Unit filename="../../Source/SpriteData.h" />
 		<Unit filename="../../Source/StartScreen.cpp" />
 		<Unit filename="../../Source/StartScreen.h" />
