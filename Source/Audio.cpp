@@ -6,10 +6,13 @@ Audio::Audio(bool needInit) {
     Mix_OpenAudio(44100, AUDIO_S16, 2, 4096);
 
     click = Mix_LoadWAV("..\\..\\Source\\Music\\click_001.wav");
-    music = Mix_LoadMUS("..\\..\\Source\\Music\\228.mp3");
+    eat = Mix_LoadWAV("..\\..\\Source\\Music\\eatCandy.wav");
 
-    setMusicVolume(6);
+    music = Mix_LoadMUS("..\\..\\Source\\Music\\Mozart.mp3");
+
+    setMusicVolume(5);
     setEffectVolume(click, 5);
+    setEffectVolume(eat, 15);
 }
 
 void Audio::setMusicVolume(int volume)
