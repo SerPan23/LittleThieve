@@ -12,7 +12,7 @@ Audio::Audio(bool needInit) {
 
     setMusicVolume(5);
     setEffectVolume(click, 5);
-    setEffectVolume(eat, 15);
+    setEffectVolume(eat, 20);
 }
 
 void Audio::setMusicVolume(int volume)
