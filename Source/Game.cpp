@@ -70,13 +70,13 @@ Game::~Game() {
 void Game::keyEvents(Input &input, SCREENS &newScreen)
 {
     if (input.isKeyHeld(SDL_SCANCODE_LEFT) == true || input.isKeyHeld(SDL_SCANCODE_A))
-        _player.moveLeft();
+        {_player.moveLeft(); audio.playEffect(audio.footSound);}
     else if (input.isKeyHeld(SDL_SCANCODE_RIGHT) == true || input.isKeyHeld(SDL_SCANCODE_D))
-        _player.moveRight();
+        {_player.moveRight(); audio.playEffect(audio.footSound);}
     if (input.isKeyHeld(SDL_SCANCODE_W) == true || input.isKeyHeld(SDL_SCANCODE_UP))
-        _player.moveTop();
+        {_player.moveTop(); audio.playEffect(audio.footSound);}
     else if (input.isKeyHeld(SDL_SCANCODE_S) == true || input.isKeyHeld(SDL_SCANCODE_DOWN))
-        _player.moveDown();
+        {_player.moveDown(); audio.playEffect(audio.footSound);}
     if (!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT) && !input.isKeyHeld(SDL_SCANCODE_A) && !input.isKeyHeld(SDL_SCANCODE_D))
         _player.moveStopX();
     if (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W))
