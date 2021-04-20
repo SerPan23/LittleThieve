@@ -9,11 +9,12 @@
 #include "Alphabet.h"
 #include "Button.h"
 #include "Input.h"
+#include "Audio.h"
 
 class Game{
 public:
     Game(){}
-    Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel);
+    Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel, Audio &audio);
 	~Game();
 
 public:
@@ -36,6 +37,7 @@ public:
 	Graphics _graphics;
 	Alphabet _alphabet;
 	Vector2 mouse;
+	Audio audio;
 };
 
 

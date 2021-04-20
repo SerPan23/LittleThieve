@@ -11,11 +11,12 @@ namespace {
 	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 
-Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel) {
+Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel, Audio &audio) {
 	//SDL_Init(SDL_INIT_EVERYTHING);
 	//Graphics graphics(true);
 	this->_graphics = graphics;
 	this->_alphabet = alphabet;
+	this->audio = audio;
 
 	this->_level = Level(currentLevel, graphics);
 

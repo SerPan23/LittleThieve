@@ -5,11 +5,14 @@
 #include "Graphics.h"
 #include "TextureFuncs.h"
 #include "Button.h"
+#include "Audio.h"
 
 class InfoScreen{
 public:
-    InfoScreen();
+    InfoScreen(){}
+    InfoScreen(Audio &audio);
 
+    Audio audio;
     vector<Button> btns;
 
     void draw(Graphics &graphics);

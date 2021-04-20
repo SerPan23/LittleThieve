@@ -1,8 +1,10 @@
 #include "SelectLevelScreen.h"
 
 
-SelectLevelScreen::SelectLevelScreen()
+SelectLevelScreen::SelectLevelScreen(Audio &audio)
 {
+    this->audio = audio;
+
     Button backBtn(0, 25, 25);
     backBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\backBtn.png");
     backBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\backBtnHover.png");
@@ -40,6 +42,7 @@ void SelectLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScre
         {
             if(btns[i].checkClick())
             {
+                audio.playEffect(audio.click);
                 if(btns[i].id == 0) // btn to menu
                 {
                     mouse.leftBtnPressed = false;

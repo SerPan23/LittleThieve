@@ -10,16 +10,19 @@ GameManager::GameManager()
 	Alphabet alphabet;
     alphabet.loadAlphabet("..\\..\\Source\\Sprites\\alphabet\\alphabet_24px.png");
     this->alphabet = alphabet;
+    Audio a(true);
+    this->audio = a;
+
 	mQuit = false;
 	mTimer = Timer::Instance();
 
-	Game game(graphics, alphabet, currentLevel);
+	Game game(graphics, alphabet, currentLevel, audio);
 	this->game = game;
 
-	this->startScreen = StartScreen();
-    this->infoScreen = InfoScreen();
-    this->selectLevelScreen = SelectLevelScreen();
-	this->endLevelScreen = EndLevelScreen(this->game.isWin, alphabet);
+	this->startScreen = StartScreen(audio);
+    this->infoScreen = InfoScreen(audio);
+    this->selectLevelScreen = SelectLevelScreen(audio);
+	this->endLevelScreen = EndLevelScreen(this->game.isWin, alphabet, audio);
 
 	Run();
 }
@@ -79,7 +82,7 @@ void GameManager::Render() {
 }
 
 void GameManager::Run() {
-
+    audio.playPausedMusic(audio.music);
     while(!mQuit) {
         input.beginNewFrame();
         mTimer->Update();

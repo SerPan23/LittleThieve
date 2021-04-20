@@ -1,7 +1,9 @@
 #include "InfoScreen.h"
 
-InfoScreen::InfoScreen()
+InfoScreen::InfoScreen(Audio &audio)
 {
+    this->audio = audio;
+
     Button backBtn(1, 25, 25);
     backBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\backBtn.png");
     backBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\backBtnHover.png");
@@ -30,6 +32,7 @@ void InfoScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen)
         {
             if(btns[i].checkClick())
             {
+                audio.playEffect(audio.click);
                 if(btns[i].id == 1) // btn to menu
                 {
                     mouse.leftBtnPressed = false;

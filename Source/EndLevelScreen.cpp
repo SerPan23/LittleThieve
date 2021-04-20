@@ -1,9 +1,10 @@
 #include "EndLevelScreen.h"
 
-EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet)
+EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet, Audio &audio)
 {
     this->isWin = isWin;
     this->alphabet = alphabet;
+    this->audio = audio;
 
     Button homeBtn(1, 625, 500);
     homeBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\menuBtn.png");
@@ -94,6 +95,7 @@ void EndLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen,
         {
             if(btns[i].checkClick() && btns[i].needDraw)
             {
+                audio.playEffect(audio.click);
                 if(btns[i].id == 1)
                 {
                     mouse.leftBtnPressed = false;

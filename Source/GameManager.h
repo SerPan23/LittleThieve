@@ -5,6 +5,7 @@
 #include "TextureFuncs.h"
 #include "Graphics.h"
 #include "Alphabet.h"
+#include "Audio.h"
 #include "Timer.h"
 #include "Game.h"
 #include "Input.h"
@@ -20,6 +21,7 @@ public:
 
     Graphics graphics;
 	Alphabet alphabet;
+    Audio audio;
 	bool mQuit;
 	const int FRAME_RATE = 120;
 	Timer* mTimer;

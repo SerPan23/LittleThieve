@@ -1,7 +1,9 @@
 #include "StartScreen.h"
 
-StartScreen::StartScreen()
+StartScreen::StartScreen(Audio &audio)
 {
+    this->audio = audio;
+
     Button playBtn(1, 625, 450);
     playBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\playBtn.png");
     playBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\playBtnHover.png");
@@ -40,6 +42,7 @@ void StartScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen)
         {
             if(btns[i].checkClick())
             {
+                audio.playEffect(audio.click);
                 if(btns[i].id == 1)
                 {
                     mouse.leftBtnPressed = false;
