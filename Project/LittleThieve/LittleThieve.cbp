@@ -31,54 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../Source/Alphabet.cpp" />
-		<Unit filename="../../Source/Alphabet.h" />
-		<Unit filename="../../Source/Build_lvl_1.cpp" />
-		<Unit filename="../../Source/Build_lvl_2.cpp" />
-		<Unit filename="../../Source/Button.cpp" />
-		<Unit filename="../../Source/Button.h" />
-		<Unit filename="../../Source/EndLevelScreen.cpp" />
-		<Unit filename="../../Source/EndLevelScreen.h" />
-		<Unit filename="../../Source/Floor.h" />
-		<Unit filename="../../Source/Game.cpp" />
-		<Unit filename="../../Source/Game.h" />
-		<Unit filename="../../Source/GameManager.cpp" />
-		<Unit filename="../../Source/GameManager.h" />
-		<Unit filename="../../Source/Globals.h" />
-		<Unit filename="../../Source/Graphics.cpp" />
-		<Unit filename="../../Source/Graphics.h" />
-		<Unit filename="../../Source/HUD.cpp" />
-		<Unit filename="../../Source/HUD.h" />
-		<Unit filename="../../Source/InfoScreen.cpp" />
-		<Unit filename="../../Source/InfoScreen.h" />
-		<Unit filename="../../Source/Input.cpp" />
-		<Unit filename="../../Source/Input.h" />
-		<Unit filename="../../Source/Item.h" />
-		<Unit filename="../../Source/Level.cpp" />
-		<Unit filename="../../Source/Level.h" />
-		<Unit filename="../../Source/LevelBulders.h" />
-		<Unit filename="../../Source/LittleThieve.h" />
-		<Unit filename="../../Source/Player.cpp" />
-		<Unit filename="../../Source/Player.h" />
-		<Unit filename="../../Source/SelectLevelScreen.cpp" />
-		<Unit filename="../../Source/SelectLevelScreen.h" />
-		<Unit filename="../../Source/SpriteData.h" />
-		<Unit filename="../../Source/StartScreen.cpp" />
-		<Unit filename="../../Source/StartScreen.h" />
-		<Unit filename="../../Source/TextureFuncs.cpp" />
-		<Unit filename="../../Source/TextureFuncs.h" />
-		<Unit filename="../../Source/Timer.cpp" />
-		<Unit filename="../../Source/Timer.h" />
-		<Unit filename="../../Source/Wall.h" />
-		<Unit filename="../../Source/drawFuncs.cpp" />
-		<Unit filename="../../Source/it_math.cpp" />
-		<Unit filename="../../Source/it_math.h" />
-		<Unit filename="../../Source/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
