@@ -10,6 +10,7 @@
 #include "Button.h"
 #include "Input.h"
 #include "Audio.h"
+#include "Door.h"
 
 class Game{
 public:

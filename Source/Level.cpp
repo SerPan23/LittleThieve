@@ -15,9 +15,9 @@ void Level::loadMap(int LevelIndex, Graphics &graphics)
 {
     //this->_TIME = levelTime;
     if(LevelIndex == 1)
-        Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints, this->_TIME);
+        Build_lvl_1(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, doors, this->necessaryPoints, this->_TIME);
     else if(LevelIndex == 2)
-        Build_lvl_2(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, this->necessaryPoints, this->_TIME);
+        Build_lvl_2(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, doors, this->necessaryPoints, this->_TIME);
 }
 
 void Level::update(float elapsedTime, Player &player)
@@ -32,6 +32,8 @@ void Level::draw(Graphics &graphics)
         walls[i].drawWall(graphics.getRenderer());
     for(int i = 0; i < items.size(); i++)
         items[i].draw(graphics.getRenderer());
+    for(int i = 0; i < doors.size(); i++)
+        doors[i].draw(graphics.getRenderer());
 }
 
 void Level::checkCollision(float elapsedTime, Player &player)
@@ -92,6 +94,39 @@ void Level::checkCollision(float elapsedTime, Player &player)
             {
                 player._dx = 0;
                 //player.x = items[i].x - player.spriteData.width;
+            }
+        }
+    }
+
+    for(int i = 0; i < doors.size(); i++)
+    {
+        if(!doors[i].isOpen)
+        {
+            if((player.x >= doors[i].x && player.x <= doors[i].spriteData.width+doors[i].x)||(player.x+player.spriteData.width >= doors[i].x && player.x+player.spriteData.width <= doors[i].spriteData.width+doors[i].x)||(player.x+player.spriteData.width/2 >= doors[i].x && player.x+player.spriteData.width/2 <= doors[i].spriteData.width+doors[i].x))
+            {
+                if(((player.y >= doors[i].spriteData.height + doors[i].y)||(player.y+player.spriteData.width >= doors[i].spriteData.height + doors[i].y)||(player.y+player.spriteData.width/2 >= doors[i].spriteData.height + doors[i].y))&&(player.y + player._dy * elapsedTime <= doors[i].spriteData.height + doors[i].y))// вверхняя
+                {
+                    player._dy = 0;
+                    //player.y = doors[i].spriteData.height + doors[i].y;
+                }
+                else if(((player.y + player.spriteData.height <= doors[i].y)||(player.y + player.spriteData.height + player.spriteData.width <= doors[i].y)||(player.y + player.spriteData.height + player.spriteData.width/2 <= doors[i].y))&&(player.y + player.spriteData.height + player._dy * elapsedTime >= doors[i].y))// нижняя
+                {
+                    player._dy = 0;
+                    //player.y = doors[i].y - player.spriteData.height;
+                }
+            }
+            if((player.y >= doors[i].y && player.y <= doors[i].spriteData.height+doors[i].y)||(player.y+player.spriteData.height >= doors[i].y && player.y+player.spriteData.height <= doors[i].spriteData.height+doors[i].y)||(player.y+player.spriteData.height/2 >= doors[i].y && player.y+player.spriteData.height/2 <= doors[i].spriteData.height+doors[i].y))
+            {
+                if(((player.x >= doors[i].spriteData.width + doors[i].x)||(player.x+player.spriteData.height >= doors[i].spriteData.width + doors[i].x)||(player.x+player.spriteData.height/2 >= doors[i].spriteData.width + doors[i].x))&&(player.x + player._dx * elapsedTime <= doors[i].spriteData.width+doors[i].x))//Левая
+                {
+                    player._dx = 0;
+                    //player.x = doors[i].spriteData.width + doors[i].x;
+                }
+                else if(((player.x + player.spriteData.width <= doors[i].x)||(player.x + player.spriteData.width+player.spriteData.height <= doors[i].x)||(player.x + player.spriteData.width+player.spriteData.height/2 <= doors[i].x))&&(player.x + player.spriteData.width + player._dx * elapsedTime >= doors[i].x)) //Правая
+                {
+                    player._dx = 0;
+                    //player.x = doors[i].x - player.spriteData.width;
+                }
             }
         }
     }

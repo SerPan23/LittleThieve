@@ -7,6 +7,7 @@
 #include "Item.h"
 #include "Globals.h"
 #include "LevelBulders.h"
+#include "Door.h"
 
 class Level{
 public:
@@ -17,6 +18,7 @@ public:
 	vector <Wall> walls;
 	Floor floor;
     vector <Item> items;
+    vector <Door> doors;
     Vector2 _playerSpawnPoint;
     int necessaryPoints;
     float _TIME;

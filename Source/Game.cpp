@@ -198,10 +198,15 @@ void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
     {
         newScreen = levelend;
     }
-    if(this->_player.currentPoints == this->_level.necessaryPoints)
+    if((_player.x > 1444)&&(this->_player.currentPoints == this->_level.necessaryPoints))
     {
         isWin = 1;
-
+        newScreen = levelend;
+    }
+    if(this->_player.currentPoints == this->_level.necessaryPoints)
+    {
+        _level.doors[0].isLock = 0;
+        _level.doors[0].open();
     }
     else
         isWin = 0;

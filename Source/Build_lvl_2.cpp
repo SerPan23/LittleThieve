@@ -3,8 +3,9 @@
 #include "LevelBulders.h"
 #include "Player.h"
 #include "Globals.h"
+#include "Door.h"
 
-void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <Wall> &walls, vector <Item> &items, Floor &floor, int &necessaryPoints, float &levelTime)
+void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <Wall> &walls, vector <Item> &items, Floor &floor, vector<Door> &doors, int &necessaryPoints, float &levelTime)
 {
     levelTime = 30;
     playerSpawnPoint.x = 1334;
