@@ -32,7 +32,6 @@ class Player{
         void moveDown();
         void moveStopX();
         void moveStopY();
-        void takeSMT();
 
         void update(float elapsedTime);
         void drawPlayer(SDL_Renderer *renderer);
