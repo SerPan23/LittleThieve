@@ -86,20 +86,14 @@ void GameManager::Run() {
     while(!mQuit) {
         input.beginNewFrame();
         mTimer->Update();
-
         while(SDL_PollEvent(&events)) {
-            if(events.type == SDL_QUIT) {
-
+            if(events.type == SDL_QUIT)
 					mQuit = true;
-            }
-            if (events.type == SDL_KEYDOWN) {
-				if (events.key.repeat == 0) {
+            if (events.type == SDL_KEYDOWN)
+				if (events.key.repeat == 0)
 					input.keyDownEvent(events);
-				}
-			}
-			else if (events.type == SDL_KEYUP) {
+			else if (events.type == SDL_KEYUP)
 				input.keyUpEvent(events);
-			}
 			if(events.type == SDL_MOUSEMOTION)
             {
                 mouse.pos.x = events.motion.x;
@@ -110,7 +104,6 @@ void GameManager::Run() {
             else
                 mouse.leftBtnPressed = false;
         }
-        Update();
-        Render();
+        Update(); Render();
     }
 }
