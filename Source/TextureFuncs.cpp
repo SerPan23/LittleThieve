@@ -29,24 +29,6 @@ Uint32 getpixel(SDL_Surface *surface, int x, int y)
     }
 }
 
-
-/*vector <vector<SDL_Color> > loadTexture(char* path)
-{
-    SDL_Surface *image = SDL_LoadBMP(path);//"..\\..\\Source\\Sprites\\image.bmp"
-    vector <vector<SDL_Color> > texture(image->h, vector<SDL_Color>(image->w));
-
-    for(int i = 0; i < image->h; i++)
-    {
-        for(int j = 0; j < image->w; j++)
-        {
-            SDL_Color pixelColor;
-            Uint32 data = getpixel(image, i, j);
-            SDL_GetRGBA(data, image->format, &pixelColor.r, &pixelColor.g, &pixelColor.b, &pixelColor.a);
-            texture[i][j] = pixelColor;
-        }
-    }
-    return texture;
-}*/
 SpriteData loadTexture(char* path)
 {
     //SDL_Surface *image = SDL_LoadBMP(path);//"..\\..\\Source\\Sprites\\image.bmp"
