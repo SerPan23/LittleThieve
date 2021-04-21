@@ -78,7 +78,6 @@ void EndLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen,
     {
         btns[i].checkHover(mouse.pos);
         if(mouse.leftBtnPressed)
-        {
             if(btns[i].checkClick() && btns[i].needDraw)
             {
                 audio.playEffect(audio.click);
@@ -99,6 +98,5 @@ void EndLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen,
                     newScreen = play;
                 }
             }
-        }
     }
 }
