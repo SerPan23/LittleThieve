@@ -35,8 +35,6 @@ class Player{
 
         void update(float elapsedTime);
         void drawPlayer(SDL_Renderer *renderer);
-    //private:
-
 };
 
 
