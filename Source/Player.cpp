@@ -2,7 +2,6 @@
 
 void Player::drawPlayer(SDL_Renderer *renderer)
 {
-    //filled_rect(renderer, x, y, width, height, 0, 255, 0);
     drawTexture(this->spriteData.texture, renderer, (int)this->x, (int)this->y);
 }
 
