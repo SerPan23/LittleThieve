@@ -38,7 +38,4 @@ void Player::update(float elapsedTime)
     this->x += this->_dx * elapsedTime;
     //cout << this->x-t << endl;
     this->y += this->_dy * elapsedTime;
-    //this-> _dx = 0.0f;
-    //this-> _dy = 0.0f;
-
 }
