@@ -5,12 +5,6 @@
 #include "Wall.h"
 #include "TextureFuncs.h"
 
-
-namespace {
-	const int FPS = 50;
-	const int MAX_FRAME_TIME = 1000 / FPS;
-}
-
 Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel, Audio &audio) {
 	this->_graphics = graphics;
 	this->_alphabet = alphabet;
