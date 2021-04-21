@@ -35,9 +35,7 @@ void Game::gameReset(int &currentLevel)
     isWin = 0;
 }
 
-Game::~Game() {
-
-}
+Game::~Game() {}
 
 
 void Game::keyEvents(Input &input, SCREENS &newScreen)
