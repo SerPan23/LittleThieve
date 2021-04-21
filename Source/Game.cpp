@@ -12,8 +12,6 @@ namespace {
 }
 
 Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel, Audio &audio) {
-	//SDL_Init(SDL_INIT_EVERYTHING);
-	//Graphics graphics(true);
 	this->_graphics = graphics;
 	this->_alphabet = alphabet;
 	this->audio = audio;
@@ -23,8 +21,6 @@ Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel, Audio &aud
 
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
     _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
-
-    //this->gameLoop();
 }
 
 void Game::gameReset(int &currentLevel)
