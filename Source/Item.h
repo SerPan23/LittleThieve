@@ -42,21 +42,5 @@ public:
 
 };
 
-/*
-class Candy:public Item{
-public:
-
-    Candy(int x, int y, int w, int h)
-    {
-        this->x = x;
-        this->y = y;
-        this->w = w;
-        this->h = h;
-    }
-    void event() override {
-        cout << "Candy";
-    }
-};*/
-
 
 #endif // ITEM_H_INCLUDED
