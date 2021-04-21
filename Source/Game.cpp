@@ -39,33 +39,6 @@ Game::~Game() {
 
 }
 
-/*void Game::keyEvents(SDL_Event event)
-{
-    if (event.key.keysym.scancode == SDL_SCANCODE_UP || event.key.keysym.scancode == SDL_SCANCODE_W)
-    {
-        _player.moveTop();
-    }
-
-    if (event.key.keysym.scancode == SDL_SCANCODE_DOWN || event.key.keysym.scancode == SDL_SCANCODE_S)
-    {
-        _player.moveDown();
-    }
-
-    if (event.key.keysym.scancode == SDL_SCANCODE_LEFT || event.key.keysym.scancode == SDL_SCANCODE_A)
-    {
-        _player.moveLeft();
-    }
-
-    if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT || event.key.keysym.scancode == SDL_SCANCODE_D)
-    {
-        _player.moveRight();
-    }
-    if (event.key.keysym.scancode == SDL_SCANCODE_E)
-    {
-        checkItemsAround();
-        //_player.takeSMT();
-    }
-}*/
 
 void Game::keyEvents(Input &input, SCREENS &newScreen)
 {
@@ -130,56 +103,6 @@ void Game::checkItemsAround()
         }
     }
 }
-
-/*void Game::gameLoop() {
-
-    SDL_Event event;
-
-    this->_level = Level(1, this->_graphics);
-
-    this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
-    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
-
-
-    Alphabet alphabet;
-    alphabet.loadAlphabet("..\\..\\Source\\Sprites\\alphabet\\alphabet_24px.png");
-    _alphabet = alphabet;
-
-
-    int LAST_UPDATE_TIME = SDL_GetTicks();
-
-    this->_level._TIME = 8*1000;
-    bool quit = false;
-    while (!quit) {
-        while(SDL_PollEvent(&event)){
-            if (event.type == SDL_QUIT)
-                quit = true;
-
-            //if(event.type == SDL_KEYDOWN)
-                //_player.keyEvents(event);
-                //keyEvents(event);
-            if(event.type == SDL_MOUSEMOTION)
-            {
-                mouse.x = event.motion.x;
-                mouse.y = event.motion.y;
-            }
-        }
-
-
-
-        const int CURRENT_TIME_MS = SDL_GetTicks();
-		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
-
-		this->_level._TIME -= ELAPSED_TIME_MS;
-
-
-		//this->update(it_min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
-
-		LAST_UPDATE_TIME = CURRENT_TIME_MS;
-		this->draw(this->_graphics);
-    }
-
-}*/
 
 
 void Game::draw(Graphics &graphics) {
