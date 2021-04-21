@@ -32,9 +32,6 @@ void Player::moveStopY(){
 
 void Player::update(float elapsedTime)
 {
-    int t = this->x;
-    //cout << this->_dx << " " << elapsedTime << " | " << this->_dx * elapsedTime << endl;
     this->x += this->_dx * elapsedTime;
-    //cout << this->x-t << endl;
     this->y += this->_dy * elapsedTime;
 }
