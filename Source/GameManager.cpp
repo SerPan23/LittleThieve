@@ -32,7 +32,6 @@ GameManager::~GameManager() {
     mTimer = NULL;
 }
 
-
 void GameManager::Update() {
     if(newScreen != currentScreen)
     {
@@ -60,6 +59,7 @@ void GameManager::Update() {
             break;
     }
 }
+
 void GameManager::Render() {
     switch(currentScreen)
     {
