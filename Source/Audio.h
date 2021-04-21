@@ -8,9 +8,9 @@ public:
     Audio(){}
     Audio(bool needInit);
 
-    //Музыка, которую будем проигрывать
+    //Музыка
     Mix_Music *music = NULL;
-    //Звуки, которые будут использоваться
+    //Звуки
     Mix_Chunk *click = NULL;
     Mix_Chunk *eat = NULL;
     Mix_Chunk *footSound = NULL;
