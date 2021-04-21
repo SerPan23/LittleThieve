@@ -26,6 +26,10 @@ public:
 	void update(float elapsedTime, Player &player);
 	void draw(Graphics &graphics);
 	void checkCollision(float elapsedTime, Player &player);
+	void checkCollisionWall(float elapsedTime, Player &player);
+	void checkCollisionItem(float elapsedTime, Player &player);
+	void checkCollisionDoor(float elapsedTime, Player &player);
+
 
 
 private:

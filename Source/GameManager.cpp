@@ -89,9 +89,10 @@ void GameManager::Run() {
         while(SDL_PollEvent(&events)) {
             if(events.type == SDL_QUIT)
 					mQuit = true;
-            if (events.type == SDL_KEYDOWN)
+            if (events.type == SDL_KEYDOWN){
 				if (events.key.repeat == 0)
 					input.keyDownEvent(events);
+            }
 			else if (events.type == SDL_KEYUP)
 				input.keyUpEvent(events);
 			if(events.type == SDL_MOUSEMOTION)

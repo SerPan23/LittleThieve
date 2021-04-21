@@ -38,6 +38,13 @@ void Level::draw(Graphics &graphics)
 
 void Level::checkCollision(float elapsedTime, Player &player)
 {
+    this->checkCollisionWall(elapsedTime, player);
+    this->checkCollisionItem(elapsedTime, player);
+    this->checkCollisionDoor(elapsedTime, player);
+}
+
+void Level::checkCollisionWall(float elapsedTime, Player &player)
+{
     for(int i = 0; i < walls.size(); i++)
     {
         if((player.x >= walls[i].x && player.x <= walls[i].w+walls[i].x)||(player.x+player.spriteData.width >= walls[i].x && player.x+player.spriteData.width <= walls[i].w+walls[i].x)||(player.x+player.spriteData.width/2 >= walls[i].x && player.x+player.spriteData.width/2 <= walls[i].w+walls[i].x))
@@ -67,7 +74,11 @@ void Level::checkCollision(float elapsedTime, Player &player)
             }
         }
     }
+}
 
+
+void Level::checkCollisionItem(float elapsedTime, Player &player)
+{
     for(int i = 0; i < items.size(); i++)
     {
         if((player.x >= items[i].x && player.x <= items[i].w+items[i].x)||(player.x+player.spriteData.width >= items[i].x && player.x+player.spriteData.width <= items[i].w+items[i].x)||(player.x+player.spriteData.width/2 >= items[i].x && player.x+player.spriteData.width/2 <= items[i].w+items[i].x))
@@ -97,7 +108,10 @@ void Level::checkCollision(float elapsedTime, Player &player)
             }
         }
     }
+}
 
+void Level::checkCollisionDoor(float elapsedTime, Player &player)
+{
     for(int i = 0; i < doors.size(); i++)
     {
         if(!doors[i].isOpen)
@@ -130,5 +144,4 @@ void Level::checkCollision(float elapsedTime, Player &player)
             }
         }
     }
-
 }
