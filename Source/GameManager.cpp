@@ -110,9 +110,7 @@ void GameManager::Run() {
             else
                 mouse.leftBtnPressed = false;
         }
-        //if(mTimer->DeltaTime() >= (1.0f / FRAME_RATE)) {
-            Update();
-            Render();
-        //}
+        Update();
+        Render();
     }
 }
