@@ -4,17 +4,17 @@ StartScreen::StartScreen(Audio &audio)
 {
     this->audio = audio;
 
-    Button playBtn(1, 625, 450);
+    Button playBtn(1, 525, 450);
     playBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\playBtn.png");
     playBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\playBtnHover.png");
     playBtn.currentState = playBtn.idleState;
     btns.push_back(playBtn);
-    Button selectLevelBtn(2, 625, 600);
+    Button selectLevelBtn(2, 525, 600);
     selectLevelBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\selectLevelBtn.png");
     selectLevelBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\selectLevelBtnHover.png");
     selectLevelBtn.currentState = selectLevelBtn.idleState;
     btns.push_back(selectLevelBtn);
-    Button infoBtn(3, 1420, 920);
+    Button infoBtn(3, 1390, 890);
     infoBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\infoBtn.png");
     infoBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\infoBtnHover.png");
     infoBtn.currentState = infoBtn.idleState;
