@@ -15,8 +15,8 @@ using namespace std;
 enum SCREENS {start, info, play, selectLevel, levelend};
 
 //draw funcs
-void    line_vertical(SDL_Renderer *renderer, int x, int y, int y2, int r, int g, int b);
-void    line_horizontal(SDL_Renderer *renderer, int x, int y, int x2, int r, int g, int b);
-void    filled_rect(SDL_Renderer *renderer, int x, int y, int width, int height, int r, int g, int b);
+void line_vertical(SDL_Renderer *renderer, int x, int y, int y2, int r, int g, int b, int a);
+void line_horizontal(SDL_Renderer *renderer, int x, int y, int x2, int r, int g, int b, int a);
+void filled_rect(SDL_Renderer *renderer, int x, int y, int width, int height, int r, int g, int b, int a);
 
 #endif // LITTLETHIEVE_H_INCLUDED

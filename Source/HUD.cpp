@@ -30,9 +30,9 @@ void HUD::draw(SDL_Renderer *renderer)
     c.a = 255;
     string msg = "Score:";
     msg += char(score+48);
-    _alphabet.drawText(renderer, msg, 10, 10, c);
+    _alphabet.drawText(renderer, msg, 70, 15, c);
 
     string msgs = "Time:";
     msgs += int_to_str(time);
-    _alphabet.drawText(renderer, msgs, 1000, 10, c);
+    _alphabet.drawText(renderer, msgs, 1230, 15, c);
 }
