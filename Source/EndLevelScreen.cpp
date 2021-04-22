@@ -6,24 +6,24 @@ EndLevelScreen::EndLevelScreen(bool &isWin, Alphabet &alphabet, Audio &audio)
     this->alphabet = alphabet;
     this->audio = audio;
 
-    Button homeBtn(1, 625, 500);
+    Button homeBtn(1, 525, 500);
     homeBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\menuBtn.png");
     homeBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\menuBtnHover.png");
     homeBtn.currentState = homeBtn.idleState;
     btns.push_back(homeBtn);
-    Button homeBtn2(1, 625, 650);
+    Button homeBtn2(1, 525, 650);
     homeBtn2.idleState = loadTexture("..\\..\\Source\\Sprites\\menuBtn.png");
     homeBtn2.hoverState = loadTexture("..\\..\\Source\\Sprites\\menuBtnHover.png");
     homeBtn2.currentState = homeBtn2.idleState;
     btns.push_back(homeBtn2);
 
-    Button nextLevelBtn(2, 625, 500);
+    Button nextLevelBtn(2, 525, 500);
     nextLevelBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\nextBtn.png");
     nextLevelBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\nextBtnHover.png");
     nextLevelBtn.currentState = nextLevelBtn.idleState;
     btns.push_back(nextLevelBtn);
 
-    Button retryBtn(3, 625, 500);
+    Button retryBtn(3, 525, 500);
     retryBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\retryBtn.png");
     retryBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\retryBtnHover.png");
     retryBtn.currentState = retryBtn.idleState;

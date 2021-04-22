@@ -16,7 +16,7 @@ SelectLevelScreen::SelectLevelScreen(Audio &audio)
     level1Btn.hoverState = loadTexture("..\\..\\Source\\Sprites\\level1BtnHover.png");
     level1Btn.currentState = level1Btn.idleState;
     btns.push_back(level1Btn);
-    Button level2Btn(2, 280, 200);
+    Button level2Btn(2, 310, 200);
     level2Btn.idleState = loadTexture("..\\..\\Source\\Sprites\\level2Btn.png");
     level2Btn.hoverState = loadTexture("..\\..\\Source\\Sprites\\level2BtnHover.png");
     level2Btn.currentState = level2Btn.idleState;
