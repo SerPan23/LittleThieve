@@ -4,7 +4,7 @@
 Graphics::Graphics(bool t) {
     if(t)
     {
-        SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, 0, &this->_window, &this->_renderer);
+        SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC, &this->_window, &this->_renderer);
         SDL_SetWindowTitle(this->_window, "LittleThieve");
     }
 }
