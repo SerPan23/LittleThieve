@@ -40,16 +40,10 @@ void Game::keyEvents(Input &input, SCREENS &newScreen)
         _player.moveStopX();
     if (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W))
         _player.moveStopY();
-
     if ((!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT) && !input.isKeyHeld(SDL_SCANCODE_A) && !input.isKeyHeld(SDL_SCANCODE_D)) && (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W)))
-    {
-        _player.moveStopX();
-        _player.moveStopY();
-        _player.Animate(0);
-    }
+        {_player.moveStopX();_player.moveStopY();_player.Animate(0);}
     if (input.wasKeyPressed(SDL_SCANCODE_E) == true)
         checkItemsAround();
-
     if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true)
         newScreen = start;
 }
