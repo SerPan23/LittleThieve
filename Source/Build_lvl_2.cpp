@@ -72,6 +72,13 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     Wall wall_6_end(1, 1016, 690, 32, 32, 32);
     Wall wall_7(1, 1138, 690, 256, 32, 32);
     Wall wall_7_end(1, 1112, 690, 32, 32, 32);
+    Wall wall_8(1, 920, 98, 32, 224, 32);
+    Wall wall_8_end(1, 920, 322, 32, 32, 32);
+    Wall wall_9(1, 952, 441, 32, 32, 32);
+    Wall wall_9_end(1, 920, 441, 32, 32, 32);
+    Wall wall_9_end2(1, 984, 441, 32, 32, 32);
+    Wall wall_10(1, 1138, 441, 256, 32, 32);
+    Wall wall_10_end(1, 1106, 441, 32, 32, 32);
     wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
     wall_1_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
     wall_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(147).bmp");
@@ -86,6 +93,13 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     wall_6_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
     wall_7.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
     wall_7_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
+    wall_8.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(147).bmp");
+    wall_8_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_end(124).bmp");
+    wall_9.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
+    wall_9_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
+    wall_9_end2.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
+    wall_10.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
+    wall_10_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
     walls.push_back(wall_1);
     walls.push_back(wall_1_end);
     walls.push_back(wall_2);
@@ -100,6 +114,13 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     walls.push_back(wall_6_end);
     walls.push_back(wall_7);
     walls.push_back(wall_7_end);
+    walls.push_back(wall_8);
+    walls.push_back(wall_8_end);
+    walls.push_back(wall_9);
+    walls.push_back(wall_9_end);
+    walls.push_back(wall_9_end2);
+    walls.push_back(wall_10);
+    walls.push_back(wall_10_end);
     /*Item candy_1(1, 600, 500, 32, 32, 0);
     candy_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
     items.push_back(candy_1);*/
