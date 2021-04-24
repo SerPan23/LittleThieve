@@ -40,16 +40,10 @@ void Game::keyEvents(Input &input, SCREENS &newScreen)
         _player.moveStopX();
     if (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W))
         _player.moveStopY();
-
     if ((!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT) && !input.isKeyHeld(SDL_SCANCODE_A) && !input.isKeyHeld(SDL_SCANCODE_D)) && (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W)))
-    {
-        _player.moveStopX();
-        _player.moveStopY();
-        _player.Animate(0);
-    }
+        {_player.moveStopX();_player.moveStopY();_player.Animate(0);}
     if (input.wasKeyPressed(SDL_SCANCODE_E) == true)
         checkItemsAround();
-
     if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true)
         newScreen = start;
 }
@@ -109,22 +103,7 @@ void Game::draw(Graphics &graphics) {
 
 void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
     this->_level._TIME -= elapsedTime;
-    if(this->_level._TIME <= 0)
-    {
-        newScreen = levelend;
-    }
-    if((_player.x > 1444)&&(this->_player.currentPoints == this->_level.necessaryPoints))
-    {
-        isWin = 1;
-        newScreen = levelend;
-    }
-    if(this->_player.currentPoints == this->_level.necessaryPoints)
-    {
-        _level.doors[0].isLock = 0;
-        _level.doors[0].open();
-    }
-    else
-        isWin = 0;
+    this->_level.levelLogic(this->_level, this->_player, newScreen, isWin);
 
     keyEvents(input, newScreen);
 

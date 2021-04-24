@@ -31,11 +31,16 @@ public:
 	void checkCollisionDoor(float elapsedTime, Player &player);
 
 
+	void (*levelLogic)(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
+
 
 private:
     void loadMap(int LevelIndex, Graphics &graphics);
     int _LevelIndex;
     Vector2 _size;
 };
+
+void level1Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
+void level2Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
 
 #endif // LEVEL_H_INCLUDED
