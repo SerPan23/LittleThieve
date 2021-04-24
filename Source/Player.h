@@ -15,13 +15,24 @@ class Player{
         int takedRadius = 10;
         float _dx = 0.0f, _dy = 0.0f;
         int currentPoints = 0;
+        int seeSide = 0;
         //vector <vector<SDL_Color> > texture; //vector <vector<SDL_Color> > texture = loadTexture("123");
         SpriteData spriteData;
-        Player(int x, int y)
-        {
-            this->x = x;
-            this->y = y;
-        }
+
+        SpriteData idleSprite;
+
+        vector<SpriteData> moveRightSprites;
+        vector<SpriteData> moveLeftSprites;
+        int CurrentFrame = 0;
+        int MaxFrames = 7;
+        int FrameInc = 1;
+
+        int FrameRate = 100;
+        int OldTime = 0;
+
+        void Animate(int side);
+
+        Player(int x, int y);
         Player(){}
 
         void keyEvents(SDL_Event event);

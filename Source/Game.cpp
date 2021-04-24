@@ -12,15 +12,13 @@ Game::Game(Graphics &graphics, Alphabet &alphabet, int &currentLevel, Audio &aud
 
 	this->_level = Level(currentLevel, graphics);
 
-
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
-    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
 }
 
 void Game::gameReset(int &currentLevel)
 {
     this->_player = Player(this->_level._playerSpawnPoint.x, this->_level._playerSpawnPoint.y);
-    _player.spriteData = loadTexture("..\\..\\Source\\Sprites\\player_idle.png");
+    _player.spriteData = _player.idleSprite;
     _level = Level(currentLevel, _graphics);
     isWin = 0;
 }
@@ -43,6 +41,12 @@ void Game::keyEvents(Input &input, SCREENS &newScreen)
     if (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W))
         _player.moveStopY();
 
+    if ((!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT) && !input.isKeyHeld(SDL_SCANCODE_A) && !input.isKeyHeld(SDL_SCANCODE_D)) && (!input.isKeyHeld(SDL_SCANCODE_UP) && !input.isKeyHeld(SDL_SCANCODE_DOWN) && !input.isKeyHeld(SDL_SCANCODE_S) && !input.isKeyHeld(SDL_SCANCODE_W)))
+    {
+        _player.moveStopX();
+        _player.moveStopY();
+        _player.Animate(0);
+    }
     if (input.wasKeyPressed(SDL_SCANCODE_E) == true)
         checkItemsAround();
 
