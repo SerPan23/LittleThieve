@@ -37,6 +37,7 @@
 		<Unit filename="../../Source/Audio.h" />
 		<Unit filename="../../Source/Build_lvl_1.cpp" />
 		<Unit filename="../../Source/Build_lvl_2.cpp" />
+		<Unit filename="../../Source/Build_lvl_3.cpp" />
 		<Unit filename="../../Source/Button.cpp" />
 		<Unit filename="../../Source/Button.h" />
 		<Unit filename="../../Source/Door.cpp" />
@@ -77,6 +78,7 @@
 		<Unit filename="../../Source/drawFuncs.cpp" />
 		<Unit filename="../../Source/it_math.cpp" />
 		<Unit filename="../../Source/it_math.h" />
+		<Unit filename="../../Source/levelsLogic.cpp" />
 		<Unit filename="../../Source/main.cpp" />
 		<Extensions>
 			<code_completion />
