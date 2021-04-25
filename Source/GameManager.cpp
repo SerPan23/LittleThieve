@@ -38,6 +38,8 @@ void GameManager::Update() {
         currentScreen = newScreen;
         if(newScreen == play)
             game.gameReset(currentLevel);
+        if(newScreen == exitGame)
+            this->mQuit = true;
     }
     switch(currentScreen)
     {

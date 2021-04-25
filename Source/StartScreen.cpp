@@ -19,6 +19,12 @@ StartScreen::StartScreen(Audio &audio)
     infoBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\infoBtnHover.png");
     infoBtn.currentState = infoBtn.idleState;
     btns.push_back(infoBtn);
+
+    Button exitBtn(4, 525, 750);
+    exitBtn.idleState = loadTexture("..\\..\\Source\\Sprites\\exitBtn.png");
+    exitBtn.hoverState = loadTexture("..\\..\\Source\\Sprites\\exitBtnHover.png");
+    exitBtn.currentState = exitBtn.idleState;
+    btns.push_back(exitBtn);
 }
 
 void StartScreen::draw(Graphics &graphics)
@@ -57,6 +63,11 @@ void StartScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScreen)
                 {
                     mouse.leftBtnPressed = false;
                     newScreen = info;
+                }
+                else if(btns[i].id == 4)
+                {
+                    mouse.leftBtnPressed = false;
+                    newScreen = exitGame;
                 }
             }
         }
