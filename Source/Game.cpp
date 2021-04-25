@@ -97,6 +97,7 @@ void Game::ItemEvent(Item item)
             {
                 _level.doors[i].isLock = 0;
                 _level.doors[i].open();
+                audio.playEffect(audio.doorOpen);
                 break;
             }
         }

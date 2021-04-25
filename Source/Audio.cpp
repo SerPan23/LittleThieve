@@ -8,6 +8,7 @@ Audio::Audio(bool needInit) {
     click = Mix_LoadWAV("..\\..\\Source\\Music\\click_001.wav");
     eat = Mix_LoadWAV("..\\..\\Source\\Music\\eatCandy.wav");
     footSound = Mix_LoadWAV("..\\..\\Source\\Music\\footstep03.wav");
+    doorOpen = Mix_LoadWAV("..\\..\\Source\\Music\\doorOpen_1.wav");
 
     music = Mix_LoadMUS("..\\..\\Source\\Music\\Mozart.mp3");
 
@@ -15,6 +16,7 @@ Audio::Audio(bool needInit) {
     setEffectVolume(click, 5);
     setEffectVolume(eat, 20);
     setEffectVolume(footSound, 1);
+    setEffectVolume(doorOpen, 20);
 }
 
 void Audio::setMusicVolume(int volume)

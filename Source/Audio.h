@@ -14,6 +14,7 @@ public:
     Mix_Chunk *click = NULL;
     Mix_Chunk *eat = NULL;
     Mix_Chunk *footSound = NULL;
+    Mix_Chunk *doorOpen = NULL;
 
     void setMusicVolume(int volume);
     void playPausedMusic(Mix_Music *music);

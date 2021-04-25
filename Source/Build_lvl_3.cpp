@@ -162,7 +162,7 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     candy_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
     items.push_back(candy_1);
 
-    Item key_1(1, 836, 806, 10, 10, 1);
+    Item key_1(1, 836, 806, 32, 32, 1);
     key_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\key.png");
     items.push_back(key_1);
 }
