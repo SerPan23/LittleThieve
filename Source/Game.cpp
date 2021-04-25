@@ -89,6 +89,18 @@ void Game::ItemEvent(Item item)
         audio.playEffect(audio.eat);
         _player.currentPoints += 1;
     }
+    else if(item.type == 1) //key
+    {
+        for(int i = 0; i < _level.doors.size(); i++)
+        {
+            if(item.id == _level.doors[i].keyId)
+            {
+                _level.doors[i].isLock = 0;
+                _level.doors[i].open();
+                break;
+            }
+        }
+    }
 }
 
 

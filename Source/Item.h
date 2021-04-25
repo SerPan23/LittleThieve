@@ -7,6 +7,7 @@
 
 /*Types:
 0 - Candy
+1 - Key
 */
 
 class Item{

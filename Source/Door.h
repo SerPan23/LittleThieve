@@ -13,9 +13,16 @@ public:
         this->x = x;
         this->y = y;
     }
+    Door(int x, int y, int keyId)
+    {
+        this->x = x;
+        this->y = y;
+        this->keyId = keyId;
+    }
     int x, y;
     bool isLock = true;
     bool isOpen = false;
+    int keyId = -1;
     SpriteData spriteDataIdle;
     SpriteData spriteDataOpen;
     SpriteData spriteData = spriteDataIdle;
