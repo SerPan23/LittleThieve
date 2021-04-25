@@ -1,6 +1,6 @@
 #include "Level.h"
 
-void level1Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin)
+void level1Logic(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin)
 {
     if(level._TIME <= 0)
     {
@@ -13,15 +13,19 @@ void level1Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin)
     }
     if(player.currentPoints == level.necessaryPoints)
     {
-        level.doors[0].isLock = 0;
-        level.doors[0].open();
+        if(level.doors[0].isLock)
+        {
+            level.doors[0].isLock = 0;
+            level.doors[0].open();
+            audio.playEffect(audio.doorOpen);
+        }
     }
     else
         isWin = 0;
 }
 
 
-void level2Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin)
+void level2Logic(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin)
 {
     if(level._TIME <= 0)
     {
@@ -34,15 +38,19 @@ void level2Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin)
     }
     if(player.currentPoints == level.necessaryPoints)
     {
-        level.doors[0].isLock = 0;
-        level.doors[0].open();
+        if(level.doors[0].isLock)
+        {
+            level.doors[0].isLock = 0;
+            level.doors[0].open();
+            audio.playEffect(audio.doorOpen);
+        }
     }
     else
         isWin = 0;
 }
 
 
-void level3Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin)
+void level3Logic(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin)
 {
     if(level._TIME <= 0)
     {

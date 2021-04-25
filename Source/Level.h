@@ -8,6 +8,7 @@
 #include "Globals.h"
 #include "LevelBulders.h"
 #include "Door.h"
+#include "Audio.h"
 
 class Level{
 public:
@@ -31,7 +32,7 @@ public:
 	void checkCollisionDoor(float elapsedTime, Player &player);
 
 
-	void (*levelLogic)(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
+	void (*levelLogic)(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin);
 
 
 private:
@@ -40,8 +41,8 @@ private:
     Vector2 _size;
 };
 
-void level1Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
-void level2Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
-void level3Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
+void level1Logic(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin);
+void level2Logic(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin);
+void level3Logic(Level &level, Player &player, Audio &audio, SCREENS &newScreen, bool &isWin);
 
 #endif // LEVEL_H_INCLUDED

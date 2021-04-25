@@ -117,7 +117,7 @@ void Game::draw(Graphics &graphics) {
 
 void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
     this->_level._TIME -= elapsedTime;
-    this->_level.levelLogic(this->_level, this->_player, newScreen, isWin);
+    this->_level.levelLogic(this->_level, this->_player, this->audio, newScreen, isWin);
 
     keyEvents(input, newScreen);
 
