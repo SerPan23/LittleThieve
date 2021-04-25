@@ -42,5 +42,6 @@ private:
 
 void level1Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
 void level2Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
+void level3Logic(Level &level, Player &player, SCREENS &newScreen, bool &isWin);
 
 #endif // LEVEL_H_INCLUDED

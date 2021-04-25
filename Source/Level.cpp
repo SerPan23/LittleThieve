@@ -23,6 +23,11 @@ void Level::loadMap(int LevelIndex, Graphics &graphics)
         Build_lvl_2(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, doors, this->necessaryPoints, this->_TIME);
         this->levelLogic = level2Logic;
     }
+    else if(LevelIndex == 3)
+    {
+        Build_lvl_3(graphics.getRenderer(), this->_playerSpawnPoint, walls, items, floor, doors, this->necessaryPoints, this->_TIME);
+        this->levelLogic = level3Logic;
+    }
 }
 
 void Level::update(float elapsedTime, Player &player)

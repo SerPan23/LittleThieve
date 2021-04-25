@@ -21,6 +21,12 @@ SelectLevelScreen::SelectLevelScreen(Audio &audio)
     level2Btn.hoverState = loadTexture("..\\..\\Source\\Sprites\\level2BtnHover.png");
     level2Btn.currentState = level2Btn.idleState;
     btns.push_back(level2Btn);
+
+    Button level3Btn(3, 420, 200);
+    level3Btn.idleState = loadTexture("..\\..\\Source\\Sprites\\level3Btn.png");
+    level3Btn.hoverState = loadTexture("..\\..\\Source\\Sprites\\level3BtnHover.png");
+    level3Btn.currentState = level3Btn.idleState;
+    btns.push_back(level3Btn);
 }
 
 void SelectLevelScreen::draw(Graphics &graphics)
@@ -54,10 +60,16 @@ void SelectLevelScreen::update(Mouse &mouse, SDL_Event &events, SCREENS &newScre
                     currentLevel = 1;
                     newScreen = play;
                 }
-                else if(btns[i].id == 2) // btn to menu
+                else if(btns[i].id == 2)
                 {
                     mouse.leftBtnPressed = false;
                     currentLevel = 2;
+                    newScreen = play;
+                }
+                else if(btns[i].id == 3)
+                {
+                    mouse.leftBtnPressed = false;
+                    currentLevel = 3;
                     newScreen = play;
                 }
             }
