@@ -28,6 +28,7 @@ public:
 	//void keyEvents(SDL_Event event);
 	void keyEvents(Input &input, SCREENS &newScreen);
 	void checkItemsAround();
+	void ItemEvent(Item item);
 
 	bool isWin;
 

@@ -57,36 +57,37 @@ void Game::checkItemsAround()
         {
             if(_player.x >= items[i].x+items[i].spriteData.width && _player.x-_player.takedRadius <= items[i].x+items[i].spriteData.width)
             {
-                //cout << "Taked" << endl;
-                audio.playEffect(audio.eat);
+                ItemEvent(items[i]);
                 _level.items.erase(_level.items.begin() + i);
-                _player.currentPoints += 1;
             }
             if(_player.x+_player.spriteData.width <= items[i].x && _player.x+_player.takedRadius+_player.spriteData.width >= items[i].x)
             {
-                //cout << "Taked" << endl;
-                audio.playEffect(audio.eat);
+                ItemEvent(items[i]);
                 _level.items.erase(_level.items.begin() + i);
-                _player.currentPoints += 1;
             }
         }
         if(items[i].x >= _player.x && items[i].x <= _player.x+_player.spriteData.width)
         {
             if(_player.y >= items[i].y+items[i].spriteData.height && _player.y-_player.takedRadius <= items[i].y+items[i].spriteData.height)
             {
-                //cout << "Taked" << endl;
-                audio.playEffect(audio.eat);
+                ItemEvent(items[i]);
                 _level.items.erase(_level.items.begin() + i);
-                _player.currentPoints += 1;
             }
             if(_player.y+_player.spriteData.height <= items[i].y && _player.y+_player.takedRadius+_player.spriteData.height >= items[i].y)
             {
-                //cout << "Taked" << endl;
-                audio.playEffect(audio.eat);
+                ItemEvent(items[i]);
                 _level.items.erase(_level.items.begin() + i);
-                _player.currentPoints += 1;
             }
         }
+    }
+}
+
+void Game::ItemEvent(Item item)
+{
+    if(item.type == 0) // candy
+    {
+        audio.playEffect(audio.eat);
+        _player.currentPoints += 1;
     }
 }
 
