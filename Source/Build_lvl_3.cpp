@@ -18,6 +18,12 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     door.spriteData = door.spriteDataIdle;
     doors.push_back(door);
 
+    Door door_1(354, 708, 2);
+    door_1.spriteDataIdle = loadTexture("..\\..\\Source\\Sprites\\door(441).png");
+    door_1.spriteDataOpen = loadTexture("..\\..\\Source\\Sprites\\doorOpen(441).png");
+    door_1.spriteData = door_1.spriteDataIdle;
+    doors.push_back(door_1);
+
     Floor floor1(50, 50, 1394, 914);
     Wall main_wall_1(1, 98, 50, 1298, 48, 48); // 1, 50, 50, 1394, 48, 48
     Wall main_wall_2(1, 50, 98, 48, 818, 48); // 1, 50, 50, 48, 914, 48
@@ -158,11 +164,11 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     table.spriteData = loadTexture("..\\..\\Source\\Sprites\\table.png");
     walls.push_back(table);
 
-    Item candy_1(1, 101, 795, 32, 32, 0);
+    Item candy_1(1, 101, 795, 32, 32, 0); // 101, 795
     candy_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
     items.push_back(candy_1);
 
-    Item key_1(1, 836, 806, 32, 32, 1);
+    Item key_1(2, 836, 806, 32, 32, 1); // 836, 806
     key_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\key.png");
     items.push_back(key_1);
 }

@@ -12,11 +12,11 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     playerSpawnPoint.y = 495;
     necessaryPoints = 1;
 
-    Door door(1404, 482);
-    door.spriteDataIdle = loadTexture("..\\..\\Source\\Sprites\\door(441).png");
-    door.spriteDataOpen = loadTexture("..\\..\\Source\\Sprites\\doorOpen(441).png");
-    door.spriteData = door.spriteDataIdle;
-    doors.push_back(door);
+    Door main_door(1404, 482);
+    main_door.spriteDataIdle = loadTexture("..\\..\\Source\\Sprites\\door(441).png");
+    main_door.spriteDataOpen = loadTexture("..\\..\\Source\\Sprites\\doorOpen(441).png");
+    main_door.spriteData = main_door.spriteDataIdle;
+    doors.push_back(main_door);
 
     Floor floor1(50, 50, 1394, 914);
     Wall main_wall_1(1, 98, 50, 1298, 48, 48); // 1, 50, 50, 1394, 48, 48
