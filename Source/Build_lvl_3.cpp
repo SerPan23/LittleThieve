@@ -171,4 +171,8 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     Item key_1(2, 836, 806, 32, 32, 1); // 836, 806
     key_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\key.png");
     items.push_back(key_1);
+
+    Item key_main(1, 1036, 360, 32, 32, 1); // 836, 806
+    key_main.spriteData = loadTexture("..\\..\\Source\\Sprites\\key.png");
+    items.push_back(key_main);
 }
