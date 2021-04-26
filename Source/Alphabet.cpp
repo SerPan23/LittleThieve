@@ -45,6 +45,6 @@ void Alphabet::drawText(SDL_Renderer *renderer, string text, int x, int y, SDL_C
 {
     for(int i = 0; i < text.size(); i++)
     {
-        drawLetter(renderer, text[i], x+(i*24), y, Color);
+        drawLetter(renderer, text[i], x+(i*16), y, Color);
     }
 }

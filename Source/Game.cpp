@@ -21,6 +21,7 @@ void Game::gameReset(int &currentLevel)
     _player.spriteData = _player.idleSprite;
     _level = Level(currentLevel, _graphics);
     isWin = 0;
+    _hud = HUD();
 }
 
 Game::~Game() {}
@@ -123,5 +124,5 @@ void Game::update(float elapsedTime, Input &input, SCREENS &newScreen) {
 
     this->_level.update(elapsedTime, this->_player);
     this->_player.update(elapsedTime);
-    this->_hud.update(_alphabet, this->_player.currentPoints, this->_level._TIME);
+    this->_hud.update(_alphabet, this->_player.currentPoints, this->_level.necessaryPoints, this->_level._TIME);
 }
