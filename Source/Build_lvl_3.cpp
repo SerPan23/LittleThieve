@@ -10,7 +10,7 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     levelTime = 90;
     playerSpawnPoint.x = 1334;
     playerSpawnPoint.y = 495;
-    necessaryPoints = 1;
+    necessaryPoints = 3;
 
     Door door(1404, 482, 1);
     door.spriteDataIdle = loadTexture("..\\..\\Source\\Sprites\\door(441).png");
@@ -18,7 +18,7 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     door.spriteData = door.spriteDataIdle;
     doors.push_back(door);
 
-    Door door_1(354, 708, 2);
+    Door door_1(356, 722, 2); // 708
     door_1.spriteDataIdle = loadTexture("..\\..\\Source\\Sprites\\door(441).png");
     door_1.spriteDataOpen = loadTexture("..\\..\\Source\\Sprites\\doorOpen(441).png");
     door_1.spriteData = door_1.spriteDataIdle;
@@ -64,8 +64,8 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     walls.push_back(main_wallAngle3);
     walls.push_back(main_wallAngle4);
 
-    Wall wall_1(1, 98, 676, 256, 32, 32);
-    Wall wall_1_end(1, 354, 676, 32, 32, 32);
+    Wall wall_1(1, 98, 690, 256, 32, 32);
+    Wall wall_1_end(1, 354, 690, 32, 32, 32);
     Wall wall_2(1, 354, 818, 32, 96, 32);
     Wall Wall_2_end(1, 354, 786, 32, 32, 32);
     Wall wall_3(1, 98, 441, 608, 32, 32);
@@ -80,11 +80,9 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     Wall wall_7_end(1, 1112, 690, 32, 32, 32);
     Wall wall_8(1, 920, 98, 32, 224, 32);
     Wall wall_8_end(1, 920, 322, 32, 32, 32);
-    Wall wall_9(1, 952, 441, 32, 32, 32);
+    Wall wall_9(1, 946, 441, 448, 32, 32);
     Wall wall_9_end(1, 920, 441, 32, 32, 32);
-    Wall wall_9_end2(1, 984, 441, 32, 32, 32);
-    Wall wall_10(1, 1138, 441, 256, 32, 32);
-    Wall wall_10_end(1, 1106, 441, 32, 32, 32);
+
     wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
     wall_1_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
     wall_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(147).bmp");
@@ -103,9 +101,7 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     wall_8_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_end(124).bmp");
     wall_9.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
     wall_9_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
-    wall_9_end2.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
-    wall_10.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
-    wall_10_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
+
     walls.push_back(wall_1);
     walls.push_back(wall_1_end);
     walls.push_back(wall_2);
@@ -124,9 +120,6 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     walls.push_back(wall_8_end);
     walls.push_back(wall_9);
     walls.push_back(wall_9_end);
-    walls.push_back(wall_9_end2);
-    walls.push_back(wall_10);
-    walls.push_back(wall_10_end);
 
     Wall bed_1(1, 324, 98, 128, 192, 64);
     bed_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\bed_1.png");
@@ -152,7 +145,7 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     kitchen_22.spriteData = loadTexture("..\\..\\Source\\Sprites\\kitchen_22.png");
     walls.push_back(kitchen_22);
 
-    Wall box_1(1, 101, 706, 64, 64, 64);
+    Wall box_1(1, 101, 721, 64, 64, 64);
     box_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\box(129).png");
     walls.push_back(box_1);
 
@@ -164,15 +157,23 @@ void    Build_lvl_3(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     table.spriteData = loadTexture("..\\..\\Source\\Sprites\\table.png");
     walls.push_back(table);
 
-    Item candy_1(1, 101, 795, 32, 32, 0); // 101, 795
+    Item candy_1(1, 101, 810, 32, 32, 0); // 101, 795
     candy_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
     items.push_back(candy_1);
+
+    Item candy_2(1, 101, 483, 32, 32, 0); // 101, 795
+    candy_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
+    items.push_back(candy_2);
+
+    Item candy_3(1, 670, 121, 32, 32, 0); // 101, 795
+    candy_3.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
+    items.push_back(candy_3);
 
     Item key_1(2, 836, 806, 32, 32, 1); // 836, 806
     key_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\key.png");
     items.push_back(key_1);
 
     Item key_main(1, 1036, 360, 32, 32, 1); // 836, 806
-    key_main.spriteData = loadTexture("..\\..\\Source\\Sprites\\key.png");
+    key_main.spriteData = loadTexture("..\\..\\Source\\Sprites\\key_2.png");
     items.push_back(key_main);
 }

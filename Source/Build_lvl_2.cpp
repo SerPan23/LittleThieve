@@ -10,7 +10,7 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     levelTime = 90;
     playerSpawnPoint.x = 1334;
     playerSpawnPoint.y = 495;
-    necessaryPoints = 1;
+    necessaryPoints = 2;
 
     Door main_door(1404, 482);
     main_door.spriteDataIdle = loadTexture("..\\..\\Source\\Sprites\\door(441).png");
@@ -74,11 +74,9 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     Wall wall_7_end(1, 1112, 690, 32, 32, 32);
     Wall wall_8(1, 920, 98, 32, 224, 32);
     Wall wall_8_end(1, 920, 322, 32, 32, 32);
-    Wall wall_9(1, 952, 441, 32, 32, 32);
+    Wall wall_9(1, 946, 441, 448, 32, 32);
     Wall wall_9_end(1, 920, 441, 32, 32, 32);
-    Wall wall_9_end2(1, 984, 441, 32, 32, 32);
-    Wall wall_10(1, 1138, 441, 256, 32, 32);
-    Wall wall_10_end(1, 1106, 441, 32, 32, 32);
+
     wall_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
     wall_1_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
     wall_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(147).bmp");
@@ -97,9 +95,7 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     wall_8_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_end(124).bmp");
     wall_9.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
     wall_9_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
-    wall_9_end2.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_3_end(123).bmp");
-    wall_10.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall(120).bmp");
-    wall_10_end.spriteData = loadTexture("..\\..\\Source\\Sprites\\wall_2_end(151).bmp");
+
     walls.push_back(wall_1);
     walls.push_back(wall_1_end);
     walls.push_back(wall_2);
@@ -118,9 +114,6 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     walls.push_back(wall_8_end);
     walls.push_back(wall_9);
     walls.push_back(wall_9_end);
-    walls.push_back(wall_9_end2);
-    walls.push_back(wall_10);
-    walls.push_back(wall_10_end);
 
     Wall bed_1(1, 324, 98, 128, 192, 64);
     bed_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\bed_1.png");
@@ -161,4 +154,8 @@ void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <W
     Item candy_1(1, 101, 795, 32, 32, 0);
     candy_1.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
     items.push_back(candy_1);
+
+    Item candy_2(1, 670, 121, 32, 32, 0); // 101, 795
+    candy_2.spriteData = loadTexture("..\\..\\Source\\Sprites\\candyRed2.bmp");
+    items.push_back(candy_2);
 }
