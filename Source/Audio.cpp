@@ -10,7 +10,8 @@ Audio::Audio(bool needInit) {
     footSound = Mix_LoadWAV("..\\..\\Source\\Music\\footstep03.wav");
     doorOpen = Mix_LoadWAV("..\\..\\Source\\Music\\doorOpen_1.wav");
 
-    music = Mix_LoadMUS("..\\..\\Source\\Music\\Mozart.mp3");
+    //music = Mix_LoadMUS("..\\..\\Source\\Music\\Mozart.mp3");
+    music = Mix_LoadMUS("..\\..\\Source\\Music\\3.mp3");
 
     setMusicVolume(3);
     setEffectVolume(click, 5);
