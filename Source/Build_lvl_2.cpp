@@ -7,7 +7,7 @@
 
 void    Build_lvl_2(SDL_Renderer *renderer, Vector2 &playerSpawnPoint, vector <Wall> &walls, vector <Item> &items, Floor &floor, vector<Door> &doors, int &necessaryPoints, float &levelTime)
 {
-    levelTime = 90;
+    levelTime = 70;
     playerSpawnPoint.x = 1334;
     playerSpawnPoint.y = 495;
     necessaryPoints = 2;
