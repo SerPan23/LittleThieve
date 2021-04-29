@@ -13,8 +13,8 @@ Audio::Audio(bool needInit) {
     //music = Mix_LoadMUS("..\\..\\Source\\Music\\Mozart.mp3");
     music = Mix_LoadMUS("..\\..\\Source\\Music\\3.mp3");
 
-    setMusicVolume(3);
-    setEffectVolume(click, 5);
+    setMusicVolume(6);
+    setEffectVolume(click, 10);
     setEffectVolume(eat, 20);
     setEffectVolume(footSound, 1);
     setEffectVolume(doorOpen, 20);
